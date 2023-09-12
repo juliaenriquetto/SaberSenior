@@ -9,8 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="50dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="50dp"
         android:textAlignment="center"
         android:textColor="#17337A"
         android:text="saberSênior"
@@ -19,33 +19,73 @@
         />
 
     <LinearLayout
-        android:layout_width="370dp"
+        android:layout_width="391dp"
         android:layout_height="641dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:background="@drawable/oval_background"
-        android:orientation="vertical"> <!-- Defina a orientação para vertical para alinhar verticalmente -->
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#FCFDFD"
+            android:text="Login"
+            android:fontFamily="@font/maven_pro_bold"
+            android:layout_marginLeft="120dp"
+
+            />
+
+
 
         <EditText
-            android:layout_width="250dp"
+            android:id="@+id/edtNome"
+            android:layout_width="298dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="60dp"
             android:layout_marginRight="10dp"
             android:background="@color/white"
             android:text="NOME"
-        />
+            android:textSize="25dp"
+         />
+
+
+        <EditText
+            android:id="@+id/edtNomeTelofone"
+            android:layout_width="299dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:text="TELEFONE"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edtFraseSecreta"
+            android:layout_width="294dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:text="FRASE SECRETA"
+            android:textSize="25dp" />
 
         <Button
-            android:id="@+id/button"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_gravity="center"
-            android:layout_marginTop="375dp"
+            android:layout_marginTop="80dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/oval_button_background"
-            android:fontFamily="@font/maven_pro_bold"
+            android:backgroundTint="#2365A3"
+            android:fontFamily="@font/inter_medium"
             android:text="ENTRAR"
             android:textColor="@color/white"
             android:textSize="30dp" />
