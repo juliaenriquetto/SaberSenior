@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+   >
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,28 +18,40 @@
         android:fontFamily="@font/livvic_medium"
         />
 
-    <View
+    <LinearLayout
         android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_height="641dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
         android:background="@drawable/oval_background"
-        android:layout_gravity="center">
+        android:orientation="vertical"> <!-- Defina a orientação para vertical para alinhar verticalmente -->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:gravity="top"
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:text="NOME"
+        />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="375dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/oval_button_background"
+            android:fontFamily="@font/maven_pro_bold"
+            android:text="ENTRAR"
             android:textColor="@color/white"
-            android:text="aaaaa"
-            />
-    </View>
+            android:textSize="30dp" />
 
 
-
+    </LinearLayout>
 
 
 </LinearLayout>
