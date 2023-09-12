@@ -5,13 +5,25 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/sabers_nior"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:gravity="top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
+        android:textAlignment="center"
+        android:textColor="#17337A"
+        android:text="saberSênior"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/livvic_medium"
         />
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:background="@drawable/oval_background" />
+
+
 </LinearLayout>
