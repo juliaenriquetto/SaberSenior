@@ -8,15 +8,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         android:background="@drawable/oval_backgroud_perfil"
         >
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="200dp"
+            android:layout_width="100dp"
             android:layout_height="200dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/imagemTeste" />
 
@@ -25,30 +25,94 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:layout_marginTop="-50dp"
+        android:layout_centerInParent="true"
         android:layout_marginLeft="110dp"
-        android:textColor="#FFFFFF"
+        android:layout_marginTop="-70dp"
         android:text="ANA MARQUES"
-        android:layout_centerInParent="true" />
+        android:fontFamily="@font/livvic_medium"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp" />
 
     <LinearLayout
         android:layout_width="370dp"
         android:layout_height="200dp"
         android:background="@drawable/backgroud_conhecimento"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="75dp">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Horas jogadas"
+            android:textSize="25dp"
+            android:fontFamily="@font/livvic_medium"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="70dp"
+            android:text="Conhecimento obtido"
+            android:fontFamily="@font/livvic_medium"
+            android:layout_marginTop="30dp"
+            android:textSize="25dp"
+            android:textColor="@color/white">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginLeft="-100dp"
+            app:srcCompat="@drawable/conhecimento"
+            />
+
+    </LinearLayout>
+        />
+
+    <TextView
+        android:id="@+id/tvHorasJogadas"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="10"
+        android:layout_marginTop="-95dp"
+        android:layout_marginLeft="40dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/livvic_medium"
+        android:textSize="70dp" />
+
+    <TextView
+        android:id="@+id/tvConhecimento"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="5"
+        android:layout_marginTop="-85dp"
+        android:layout_marginLeft="200dp"
+        android:textColor="@color/white"
+        android:textSize="70dp" />
+
 
     <Button
         android:id="@+id/btnEditarPerfil"
-        android:layout_width="200dp"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#162850"
+        android:padding="5dp"
         android:text="EDITAR PERFIL"
+        android:fontFamily="@font/inter_medium"
         android:textAlignment="center"
-        android:layout_marginTop="50dp"
-        android:textSize="20dp"
-        android:layout_marginLeft="120dp"
-        android:background="@drawable/oval_button_background"
-        />
+        android:textSize="27dp" />
+
+    <!-- Inclua o menu horizontal -->
+    <include
+        android:id="@+id/menu_horizontal"
+        layout="@layout/menu"
+        android:layout_width="match_parent"
+        android:layout_height="97dp" />
 
 </LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:background="#162850"
+            android:layout_marginTop="30dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/config"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/config_icon"
+                android:backgroundTint="#162850"
+                android:padding="16dp" />
+
+            <Button
+                android:id="@+id/home"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:drawableLeft="@drawable/home_icon"
+                android:backgroundTint="#162850"
+                 />
+
+            <Button
+                android:id="@+id/perfil"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#162850"
+                android:drawableLeft="@drawable/perfil_icon"
+                android:padding="16dp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+</LinearLayout>

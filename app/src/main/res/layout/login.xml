@@ -39,7 +39,6 @@
             />
 
 
-
         <EditText
             android:id="@+id/edtNome"
             android:layout_width="298dp"
