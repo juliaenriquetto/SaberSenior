@@ -8,15 +8,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="300dp"
+=======
+        android:layout_height="350dp"
+>>>>>>> dcb86f733dd1771764462ee7577edcaf262e3c5b
         android:background="@drawable/oval_backgroud_perfil"
         >
 
         <ImageView
             android:id="@+id/imageView2"
+<<<<<<< HEAD
             android:layout_width="100dp"
             android:layout_height="200dp"
             android:layout_marginTop="30dp"
+=======
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp"
+>>>>>>> dcb86f733dd1771764462ee7577edcaf262e3c5b
             android:layout_weight="1"
             app:srcCompat="@drawable/imagemTeste" />
 
@@ -25,6 +35,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_centerInParent="true"
         android:layout_marginLeft="110dp"
         android:layout_marginTop="-70dp"
@@ -32,20 +43,35 @@
         android:fontFamily="@font/livvic_medium"
         android:textColor="#FFFFFF"
         android:textSize="30dp" />
+=======
+        android:textSize="30dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginLeft="110dp"
+        android:textColor="#FFFFFF"
+        android:text="ANA MARQUES"
+        android:layout_centerInParent="true" />
+>>>>>>> dcb86f733dd1771764462ee7577edcaf262e3c5b
 
     <LinearLayout
         android:layout_width="370dp"
         android:layout_height="200dp"
         android:background="@drawable/backgroud_conhecimento"
         android:layout_gravity="center"
+<<<<<<< HEAD
         android:layout_marginTop="75dp">
+=======
+        android:layout_marginTop="50dp">
+>>>>>>> dcb86f733dd1771764462ee7577edcaf262e3c5b
 
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Horas jogadas"
             android:textSize="25dp"
+<<<<<<< HEAD
             android:fontFamily="@font/livvic_medium"
+=======
+>>>>>>> dcb86f733dd1771764462ee7577edcaf262e3c5b
             android:textColor="@color/white"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
@@ -55,7 +81,10 @@
             android:layout_width="180dp"
             android:layout_height="70dp"
             android:text="Conhecimento obtido"
+<<<<<<< HEAD
             android:fontFamily="@font/livvic_medium"
+=======
+>>>>>>> dcb86f733dd1771764462ee7577edcaf262e3c5b
             android:layout_marginTop="30dp"
             android:textSize="25dp"
             android:textColor="@color/white">
@@ -81,7 +110,10 @@
         android:layout_marginTop="-95dp"
         android:layout_marginLeft="40dp"
         android:textColor="@color/white"
+<<<<<<< HEAD
         android:fontFamily="@font/livvic_medium"
+=======
+>>>>>>> dcb86f733dd1771764462ee7577edcaf262e3c5b
         android:textSize="70dp" />
 
     <TextView
@@ -99,6 +131,7 @@
         android:id="@+id/btnEditarPerfil"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginLeft="80dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="#162850"
@@ -114,5 +147,15 @@
         layout="@layout/menu"
         android:layout_width="match_parent"
         android:layout_height="97dp" />
+=======
+        android:text="EDITAR PERFIL"
+        android:textAlignment="center"
+        android:layout_marginTop="70dp"
+        android:padding="5dp"
+        android:textSize="27dp"
+        android:layout_marginLeft="80dp"
+        android:backgroundTint="#162850"
+        />
+>>>>>>> dcb86f733dd1771764462ee7577edcaf262e3c5b
 
 </LinearLayout>
