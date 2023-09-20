@@ -5,8 +5,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#20386A"
     tools:context=".Config">
 
 
 
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="76dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="Config."
+            android:textColor="@color/white"
+            android:textSize="40dp" />
+
+
+        <LinearLayout
+            android:layout_width="380dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/backgroud_conhecimento"
+            android:backgroundTint="#2464E6">
+
+            <ImageView
+                android:id="@+id/imageViewConfig"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/imagemTeste" />
+
+            <TextView
+                android:id="@+id/txtNomeConfig"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="@font/livvic_medium"
+                android:text="ANA MARQUES"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+    <Button
+        android:layout_width="380dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#254586"
+        android:text="TEMA"
+        android:fontFamily="@font/livvic_medium"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <Button
+        android:layout_width="380dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#254586"
+        android:text="SOBRE NÓS"
+        android:fontFamily="@font/livvic_medium"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <Button
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="90dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="SAIR DA CONTA"
+        android:fontFamily="@font/maven_pro_bold"
+        android:textColor="#021E81"
+        android:textSize="30dp" />
+
+    <include
+        android:id="@+id/menu_horizontal"
+        layout="@layout/activity_menu"
+        android:layout_width="845dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="-25dp" />
 </LinearLayout>

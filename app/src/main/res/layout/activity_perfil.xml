@@ -102,6 +102,8 @@
         android:layout_marginTop="70dp"
         android:padding="5dp"
         android:textSize="27dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/livvic_medium"
         android:layout_marginLeft="80dp"
         android:backgroundTint="#162850"
         />
