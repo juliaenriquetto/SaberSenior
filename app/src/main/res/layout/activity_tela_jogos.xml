@@ -1,9 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_jogos"
+    android:orientation="vertical"
     tools:context=".TelaJogos">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvDiasJogados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/maven_pro_bold"
+        android:text="1"
+        />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="-55dp"
+        android:layout_marginLeft="42dp"
+        app:srcCompat="@drawable/conhecimento"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JOGOS"
+        android:layout_gravity="end"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="-50dp"
+        android:fontFamily="@font/maven_pro_bold"
+        android:textColor="@color/white"
+        android:textSize="55dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/oval_background_jogos">
+
+        <ImageButton
+            android:id="@+id/btnJogoDaForca"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/forca"
+            />
+
+        <ImageButton
+            android:id="@+id/btnJogoDaVelha"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/jodoDaVelha"
+            />
+
+        <ImageButton
+            android:id="@+id/btnPalavraCruzada"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginLeft="-350dp"
+            android:src="@drawable/palavraCruzada"
+            />
+
+        <ImageButton
+            android:id="@+id/btnSudoku"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/sudoku"
+            />
+
+        <ImageButton
+            android:id="@+id/jogo5"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="410dp"
+            android:layout_marginLeft="-350dp"
+            android:src="@drawable/cacaPalavra"
+            />
+
+        <ImageButton
+            android:id="@+id/jogo6"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="410dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/jogoMemoria"
+            />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/menu_horizontal"
+        layout="@layout/activity_menu"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:layout_marginTop="-25dp"
+        />
+
+
+</LinearLayout>
