@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-
+    android:orientation="horizontal"
+    tools:context=".Menu">
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -14,27 +15,26 @@
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:orientation="horizontal"
-            android:background="#162850"
             android:layout_marginTop="30dp"
-            android:gravity="center">
+            android:background="#162850"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/config"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/config_icon"
                 android:backgroundTint="#162850"
+                android:drawableLeft="@drawable/config_icon"
                 android:padding="16dp" />
 
             <Button
                 android:id="@+id/home"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:drawableLeft="@drawable/home_icon"
                 android:backgroundTint="#162850"
-                 />
+                android:drawableLeft="@drawable/home_icon"
+                android:padding="16dp" />
 
             <Button
                 android:id="@+id/perfil"
@@ -46,6 +46,5 @@
 
         </LinearLayout>
     </HorizontalScrollView>
-
 
 </LinearLayout>
