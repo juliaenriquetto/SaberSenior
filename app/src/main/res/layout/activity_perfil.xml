@@ -108,7 +108,7 @@
 
     <include
         android:id="@+id/menu_horizontal"
-        layout="@layout/menu"
+        layout="@layout/activity_menu"
         android:layout_width="match_parent"
         android:layout_height="97dp" />
 
