@@ -4,14 +4,14 @@ import com.google.gson.annotations.SerializedName
 
 data class Usuario (
     @SerializedName("id")
-    val id: Int,
+    var id: Int,
 
     @SerializedName("idFraseSecreta")
-    val idFraseSecreta: String,
+    var idFraseSecreta: String,
 
     @SerializedName("nome")
-    val nome: String,
+    var nome: String,
 
     @SerializedName("telefone")
-    val telefone: Int
+    var telefone: String
 )
