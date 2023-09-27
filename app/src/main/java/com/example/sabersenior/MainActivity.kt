@@ -8,4 +8,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+    //endereco da API node
+    val retrofitClient = RetrofitConfig.getRetrofit()
+    //rotas http da api
+    val service = retrofitClient.create(Service::class.java)
+    val callback = service.getUsuario()
+
 }
