@@ -82,7 +82,7 @@
             />
 
         <ImageButton
-            android:id="@+id/jogo5"
+            android:id="@+id/btnCacaPalavra"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_marginTop="410dp"
@@ -91,7 +91,7 @@
             />
 
         <ImageButton
-            android:id="@+id/jogo6"
+            android:id="@+id/btnMemoria"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_marginTop="410dp"
