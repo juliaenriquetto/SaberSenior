@@ -41,14 +41,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".JogoVelha"
+            android:name=".JogoVelha.JogoVelha"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".JogoForca"
+            android:name=".JogoForca.JogoForca"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
