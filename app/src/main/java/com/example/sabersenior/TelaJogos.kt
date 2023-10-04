@@ -7,6 +7,7 @@ import android.widget.ImageButton
 
 import com.example.sabersenior.JogoForca.JogoForca
 import android.widget.ImageView
+import com.example.sabersenior.JogoVelha.JogoVelha
 
 
 class TelaJogos : AppCompatActivity() {
