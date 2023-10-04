@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <resources>-->
+
+<!--        &lt;!&ndash; Tema Claro &ndash;&gt;-->
+<!--        <style name="AppTheme.LightTheme" parent="Theme.AppCompat.Light">-->
+<!--            <item name="colorPrimary">@color/colorPrimaryLight</item>-->
+<!--            <item name="colorPrimaryDark">@color/colorPrimaryDarkLight</item>-->
+<!--            <item name="colorAccent">@color/colorAccentLight</item>-->
+<!--            &lt;!&ndash; Outras configurações específicas do tema claro &ndash;&gt;-->
+<!--        </style>-->
+
+<!--        &lt;!&ndash; Tema Escuro &ndash;&gt;-->
+<!--        <style name="AppTheme.DarkTheme" parent="Theme.AppCompat">-->
+<!--            <item name="colorPrimary">@color/colorPrimaryDark</item>-->
+<!--            <item name="colorPrimaryDark">@color/colorPrimaryDarker</item>-->
+<!--            <item name="colorAccent">@color/colorAccentDark</item>-->
+<!--            &lt;!&ndash; Outras configurações específicas do tema escuro &ndash;&gt;-->
+<!--        </style>-->
+
+<!--    </resources>-->
+    <style name="AppTheme.LightTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/white</item>
+        <!-- Outras configurações específicas do tema claro -->
+    </style>
+
+    <style name="AppTheme.DarkTheme" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/corescura</item>
+        <!-- Outras configurações específicas do tema claro -->
+    </style>
+
+</resources>
