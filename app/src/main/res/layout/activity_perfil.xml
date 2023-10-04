@@ -19,7 +19,7 @@
             android:layout_height="200dp"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/imagemTeste" />
+        />
 
     </LinearLayout>
 

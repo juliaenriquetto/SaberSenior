@@ -4,7 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+
 import com.example.sabersenior.JogoForca.JogoForca
+import android.widget.ImageView
+
 
 class TelaJogos : AppCompatActivity() {
     lateinit var btnJogoDaForca: ImageButton
@@ -54,5 +57,10 @@ class TelaJogos : AppCompatActivity() {
             val intent = Intent(this, JogoMemoria::class.java)
             startActivity(intent)
         }
+
+        btnJogoDaVelha.setImageResource(R.drawable.jododavelha)
+        btnPalavraCruzada.setImageResource(R.drawable.palavracruzada)
+        btnCacaPalavra.setImageResource(R.drawable.cacapalavra)
+        btnMemoria.setImageResource(R.drawable.jogomemoria)
     }
 }

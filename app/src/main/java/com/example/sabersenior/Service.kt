@@ -10,7 +10,7 @@ interface Service {
     //CRUD
 
     @GET("/api/usuario/get/")
-    fun getDog(): Call<List<Usuario>>
+    fun getUsuario(): Call<List<Usuario>>
 
     @GET("/api/usuario/getId/{id}")
     fun selecionarUsuario(): Call<List<Usuario>>

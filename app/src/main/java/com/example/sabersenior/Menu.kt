@@ -4,11 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 
 class Menu : AppCompatActivity() {
-    lateinit var btnConfig: Button
-    lateinit var btnHome: Button
-    lateinit var btnPerfil: Button
+    lateinit var btnConfig: ImageButton
+    lateinit var btnHome: ImageButton
+    lateinit var btnPerfil: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

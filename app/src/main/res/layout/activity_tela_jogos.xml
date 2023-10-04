@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context=".TelaJogos">
 
+
+
     <TextView
         android:id="@+id/tvDiasJogados"
         android:layout_width="wrap_content"
@@ -60,7 +62,6 @@
             android:layout_height="160dp"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
-            android:src="@drawable/jodoDaVelha"
             />
 
         <ImageButton
@@ -69,7 +70,6 @@
             android:layout_height="160dp"
             android:layout_marginTop="220dp"
             android:layout_marginLeft="-350dp"
-            android:src="@drawable/palavraCruzada"
             />
 
         <ImageButton
@@ -87,7 +87,6 @@
             android:layout_height="160dp"
             android:layout_marginTop="410dp"
             android:layout_marginLeft="-350dp"
-            android:src="@drawable/cacaPalavra"
             />
 
         <ImageButton
@@ -96,7 +95,6 @@
             android:layout_height="160dp"
             android:layout_marginTop="410dp"
             android:layout_marginLeft="30dp"
-            android:src="@drawable/jogoMemoria"
             />
     </LinearLayout>
 
@@ -105,7 +103,7 @@
         layout="@layout/activity_menu"
         android:layout_width="match_parent"
         android:layout_height="97dp"
-        android:layout_marginTop="-25dp"
+        android:layout_marginTop="-15dp"
         />
 
 
