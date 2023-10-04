@@ -34,7 +34,9 @@ class Config : AppCompatActivity() {
                 myDialog.dismiss()
             }
         }
-        
+
+
+
 
 
     }

@@ -12,8 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        imageView = findViewById(R.id.imageView)
         imageView.setOnClickListener{
-            val intent = Intent(this, TelaJogos::class.java)
+            val intent = Intent(this, Config::class.java)
             startActivity(intent)
         }
     }

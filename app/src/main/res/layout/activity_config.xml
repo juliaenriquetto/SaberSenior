@@ -38,7 +38,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/imagemTeste" />
+                app:srcCompat="@drawable/imagemteste" />
 
             <TextView
                 android:id="@+id/txtNomeConfig"

@@ -20,11 +20,12 @@ class Login : AppCompatActivity() {
         edtFraseSecreta = findViewById(R.id.edtFraseSecreta)
 
         btnLogin.setOnClickListener{
-            var usuario = Usuario()
+            val idFraseSecreta = edtFraseSecreta.text.toString();
+            val nome = edtNome.text.toString();
+            val telefone = edtTelefone.text.toString()
 
-            usuario.idFraseSecreta = edtFraseSecreta.text.toString()
-            usuario.nome = edtNome.text.toString()
-            usuario.telefone = edtTelefone.text.toString()
+            var usuario = Usuario(14, idFraseSecreta, nome, telefone)
+
 
             val intent = Intent(this, TelaJogos::class.java)
             startActivity(intent)
