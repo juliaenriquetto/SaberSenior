@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context=".TelaJogos">
 
+
+
     <TextView
         android:id="@+id/tvDiasJogados"
         android:layout_width="wrap_content"

@@ -26,21 +26,21 @@
             android:fontFamily="@font/livvic_medium" />
 
         <EditText
-            android:id="@+id/edtNome"
+            android:id="@+id/EdtNomePf"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:background="@color/white"
-            android:text="NOME"
+            android:hint="NOME"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edtTelofone"
+            android:id="@+id/EdtTelPf"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:background="@color/white"
-            android:text="TELEFONE"
+            android:hint="TELEFONE"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -50,7 +50,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/dialog_Cancelar"
+                android:id="@+id/cancelar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -60,13 +60,14 @@
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/dialog_Salvar"
+                android:id="@+id/salvar"
                 android:layout_width="132dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FFFFFF"
                 android:text="Salvar"
                 android:textColor="#162850"
                 android:textSize="18sp" />
+
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
