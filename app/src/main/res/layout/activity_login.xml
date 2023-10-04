@@ -56,7 +56,7 @@
 
 
         <EditText
-            android:id="@+id/edtTelofone"
+            android:id="@+id/edtTelefone"
             android:layout_width="299dp"
             android:layout_height="50dp"
             android:layout_gravity="center"

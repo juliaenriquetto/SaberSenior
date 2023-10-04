@@ -16,7 +16,7 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         edtNome = findViewById(R.id.edtNome)
-        edtTelefone = findViewById(R.id.edtTelofone)
+        edtTelefone = findViewById(R.id.edtTelefone)
         edtFraseSecreta = findViewById(R.id.edtFraseSecreta)
 
         btnLogin.setOnClickListener{
