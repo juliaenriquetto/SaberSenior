@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc; 
+using Microsoft.AspNetCore.Mvc;
 
 namespace SaberSenior_API.AddControllers
 {
