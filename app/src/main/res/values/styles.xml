@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
 <!--    <resources>-->
 
 <!--        &lt;!&ndash; Tema Claro &ndash;&gt;-->
@@ -28,5 +29,8 @@
         <item name="colorPrimary">@color/corescura</item>
         <!-- Outras configurações específicas do tema claro -->
     </style>
+
+
+    <style name="button">button</style>
 
 </resources>

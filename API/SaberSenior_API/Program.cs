@@ -8,7 +8,6 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 // Add services to the container.
 
-//Allow CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(MyAllowSpecificOrigins, builder => {
@@ -24,11 +23,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//Add DbContext
+// Add DbContext
 builder.Services.AddDbContext<CadastroContext>(options =>
- {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("StringConexaoSQLServer")); 
- });
+{
+options.UseSqlServer(builder.Configuration.GetConnectionString("StringConexaoSQLServer"));
+});
 
 var app = builder.Build();
 
@@ -40,6 +39,7 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
+
 app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();

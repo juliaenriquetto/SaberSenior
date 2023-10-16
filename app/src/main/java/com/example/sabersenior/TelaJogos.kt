@@ -4,7 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+
+import com.example.sabersenior.JogoForca.JogoForca
 import android.widget.ImageView
+import com.example.sabersenior.JogoVelha.JogoVelha
+
 
 class TelaJogos : AppCompatActivity() {
     lateinit var btnJogoDaForca: ImageButton
