@@ -7,7 +7,7 @@ import android.widget.ImageButton
 
 import com.example.sabersenior.JogoForca.JogoForca
 import android.widget.ImageView
-import com.example.sabersenior.JogoVelha.JogoVelha
+//import com.example.sabersenior.JogoVelha.JogoVelha
 
 
 class TelaJogos : AppCompatActivity() {
@@ -35,7 +35,7 @@ class TelaJogos : AppCompatActivity() {
         }
 
         btnJogoDaVelha.setOnClickListener{
-            val intent = Intent(this, JogoVelha::class.java)
+//            val intent = Intent(this, JogoVelha::class.java)
             startActivity(intent)
         }
 
