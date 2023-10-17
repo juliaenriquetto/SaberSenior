@@ -28,7 +28,7 @@ class Perfil : AppCompatActivity() {
             Sairedit.setOnClickListener {
                 myDialog.dismiss()
             }
-
+            myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             myDialog.show()
         }
     }

@@ -50,7 +50,8 @@
             android:layout_marginTop="60dp"
             android:layout_marginRight="10dp"
             android:background="@color/white"
-            android:text="NOME"
+            android:hint="NOME"
+            
             android:textSize="25dp"
             />
 
@@ -64,7 +65,7 @@
             android:layout_marginTop="60dp"
             android:layout_marginRight="10dp"
             android:background="@color/white"
-            android:text="TELEFONE"
+            android:hint="TELEFONE"
             android:textSize="25dp" />
 
         <EditText
@@ -76,7 +77,7 @@
             android:layout_marginTop="60dp"
             android:layout_marginRight="10dp"
             android:background="@color/white"
-            android:text="FRASE SECRETA"
+            android:hint="FRASE SECRETA"
             android:textSize="25dp" />
 
         <Button
