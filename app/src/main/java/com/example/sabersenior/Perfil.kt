@@ -16,28 +16,41 @@ class Perfil : AppCompatActivity() {
         val imageView2 = findViewById<ImageView>(R.id.imageView2)
         imageView2.setImageResource(R.drawable.imagemteste)
 
-        //botão que chama o Alert Dialog
-        val btnedtPerfil = findViewById<Button>(R.id.btnEditarPerfil)
+        val btnedtPerfil = findViewById<Button>(R.id.btnEditarPerfil) // Adicione essa linha
 
-        btnedtPerfil.setOnClickListener()
-        {
-            val EdtPerfil = layoutInflater.inflate(R.layout.editerfil, null)
+        btnedtPerfil.setOnClickListener {
+            showCustomDialog()
+        }
+    }
 
-            val myDialog = Dialog(this)
-            myDialog.setContentView(EdtPerfil)
+    private fun showCustomDialog() {
+        val dialogView = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null)
 
-            myDialog.setCancelable(true)
-            myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            myDialog.show()
+        val builder = .Builder(this)
+        builder.setView(dialogView)
 
-            val Cancel = EdtPerfil.findViewById<Button>(R.id.cancelar)
+        val alertDialog = builder.create()
 
-            Cancel.setOnClickListener()
-            {
-                myDialog.dismiss()
-            }
+        val nomeEditText = dialogView.findViewById<editText>(R.id.nomeEditText)
+        val telefoneEditText = dialogView.findViewById<EditText>(R.id.telefoneEditText)
+        val salvarButton = dialogView.findViewById<Button>(R.id.salvarButton)
+        val fecharButton = dialogView.findViewById<Button>(R.id.fecharButton)
 
+        salvarButton.setOnClickListener {
+            val novoNome = nomeEditText.text.toString()
+            val novoTelefone = telefoneEditText.text.toString()
+
+            // Aqui você pode adicionar o código para salvar os dados.
+
+            alertDialog.dismiss()
         }
 
+        fecharButton.setOnClickListener {
+            alertDialog.dismiss()
+        }
+
+        alertDialog.show()
     }
+}
+
     }
