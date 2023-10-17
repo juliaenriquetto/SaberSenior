@@ -55,6 +55,12 @@ class Config : AppCompatActivity() {
                 myDialog.dismiss()
             }
 
+            val SairSobre = dialogBinding.findViewById<Button>(R.id.dialog_Sair)
+
+            SairSobre.setOnClickListener()
+            {
+                myDialog.dismiss()
+            }
             myDialog.setCancelable(true)
             myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             myDialog.show()
