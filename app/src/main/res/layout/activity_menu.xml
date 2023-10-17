@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".Menu">
+    tools:context=".Menu"
+    android:paddingBottom="0dp"
+    >
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="30dp"
         android:scrollbars="none">
 
         <LinearLayout
@@ -21,7 +23,7 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <ImageButton
+            <Button
                 android:id="@+id/btnConfig"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
@@ -29,7 +31,7 @@
                 android:drawableLeft="@drawable/config_icon"
                 android:padding="16dp" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/btnHome"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
@@ -37,9 +39,9 @@
                 android:drawableLeft="@drawable/home_icon"
                 android:padding="16dp" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/btnPerfil"
-                android:layout_width="140dp"
+                android:layout_width="147dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#162850"
                 android:drawableLeft="@drawable/perfil_icon"
