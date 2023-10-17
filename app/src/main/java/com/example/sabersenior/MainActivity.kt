@@ -15,12 +15,13 @@ class MainActivity : AppCompatActivity() {
 
         imageView = findViewById(R.id.imageView)
         imageView.setOnClickListener{
-            val intent = Intent(this, Config::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
     }
 
     //endereco da API node
+
     val retrofitClient = RetrofitConfig.getRetrofit()
     //rotas http da api
     val service = retrofitClient.create(Service::class.java)

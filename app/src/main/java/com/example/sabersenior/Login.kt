@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.material.button.MaterialButton
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -13,7 +14,7 @@ class Login : AppCompatActivity() {
     lateinit var edtNome: EditText
     lateinit var edtTelefone: EditText
     lateinit var edtFraseSecreta: EditText
-    lateinit var btnLogin: EditText
+    lateinit var btnLogin: MaterialButton
 
     fun login(){
         val retrofitClient = RetrofitConfig.getRetrofit()
@@ -39,6 +40,7 @@ class Login : AppCompatActivity() {
         edtNome = findViewById(R.id.edtNome)
         edtTelefone = findViewById(R.id.edtTelefone)
         edtFraseSecreta = findViewById(R.id.edtFraseSecreta)
+        btnLogin = findViewById(R.id.btnLogin)
 
         btnLogin.setOnClickListener{login()}
 
