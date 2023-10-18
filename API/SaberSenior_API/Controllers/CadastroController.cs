@@ -44,6 +44,7 @@ namespace SaberSenior_API.Controllers
         public async Task<ActionResult> post(CadastroSaberSenior model)
         {
             try{
+                Console.WriteLine(model.nome);
                 _context.CadastroSaberSenior.Add(model);
                 if(await _context.SaveChangesAsync() == 1)
                 {                        
@@ -58,46 +59,46 @@ namespace SaberSenior_API.Controllers
             return BadRequest();
         }
 
-     [HttpDelete("{CadastroId}")]
-      public async Task<ActionResult> delete(int CadastroId)
-      {
-        try{
-         //verifica se existe o usuario no cadastro, a ser excluido 
-         var usuario = await _context.CadastroSaberSenior.FindAsync(CadastroId);
-         if(usuario == null)
-         {
-            //método do EF
-            return NotFound(); 
-         }
-         _context.Remove(usuario);
-         await _context.SaveChangesAsync(); 
-         return NoContent();
-        }
-        catch{
-         return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
-        }
-      }
-     
-     
-   [HttpPut("{CadastroId}")]
-     public async Task<IActionResult> put(int CadastroId, CadastroSaberSenior dadosCadastroAlt)
-     {
-      try{
-        //verifica se existe usuario a ser alterado no bd cadastro
-        var result = await _context.CadastroSaberSenior.FindAsync(CadastroId);
-        if(CadastroId != result.id)
+        [HttpDelete("{CadastroId}")]
+        public async Task<ActionResult> delete(int CadastroId)
         {
-         return BadRequest(); 
+            try{
+                //verifica se existe o usuario no cadastro, a ser excluido 
+                var usuario = await _context.CadastroSaberSenior.FindAsync(CadastroId);
+                if(usuario == null)
+                {
+                    //método do EF
+                    return NotFound(); 
+                }
+                _context.Remove(usuario);
+                await _context.SaveChangesAsync(); 
+                return NoContent();
+            }
+            catch{
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
+            }
         }
-        result.idFraseSecreta = dadosCadastroAlt.idFraseSecreta;
-        result.nome = dadosCadastroAlt.nome;
-        result.telefone = dadosCadastroAlt.telefone;
-        await _context.SaveChangesAsync();
-        return Created($"/api/cadastro/{dadosCadastroAlt.idFraseSecreta}", dadosCadastroAlt);
-      }
-      catch{
-         return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
-      }
-     }
+     
+     
+        [HttpPut("{CadastroId}")]
+        public async Task<IActionResult> put(int CadastroId, CadastroSaberSenior dadosCadastroAlt)
+        {
+            try{
+                //verifica se existe usuario a ser alterado no bd cadastro
+                var result = await _context.CadastroSaberSenior.FindAsync(CadastroId);
+                if(CadastroId != result.id)
+                {
+                return BadRequest(); 
+                }
+                result.idFraseSecreta = dadosCadastroAlt.idFraseSecreta;
+                result.nome = dadosCadastroAlt.nome;
+                result.telefone = dadosCadastroAlt.telefone;
+                await _context.SaveChangesAsync();
+                return Created($"/api/cadastro/{dadosCadastroAlt.idFraseSecreta}", dadosCadastroAlt);
+            }
+            catch{
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
+            }
+        }
     }
 }

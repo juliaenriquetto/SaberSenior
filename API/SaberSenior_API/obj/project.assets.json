@@ -3067,23 +3067,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\u22140\\.nuget\\packages\\": {},
+    "C:\\Users\\u22139\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\u22140\\Documents\\GitHub\\SaberSenior\\API\\SaberSenior_API\\SaberSenior_API.csproj",
+      "projectUniqueName": "C:\\Users\\u22139\\Documents\\GitHub\\n\\SaberSenior\\API\\SaberSenior_API\\SaberSenior_API.csproj",
       "projectName": "SaberSenior_API",
-      "projectPath": "C:\\Users\\u22140\\Documents\\GitHub\\SaberSenior\\API\\SaberSenior_API\\SaberSenior_API.csproj",
-      "packagesPath": "C:\\Users\\u22140\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\u22140\\Documents\\GitHub\\SaberSenior\\API\\SaberSenior_API\\obj\\",
+      "projectPath": "C:\\Users\\u22139\\Documents\\GitHub\\n\\SaberSenior\\API\\SaberSenior_API\\SaberSenior_API.csproj",
+      "packagesPath": "C:\\Users\\u22139\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\u22139\\Documents\\GitHub\\n\\SaberSenior\\API\\SaberSenior_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\u22140\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\u22139\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
