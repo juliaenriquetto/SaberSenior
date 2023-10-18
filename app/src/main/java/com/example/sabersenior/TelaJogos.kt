@@ -3,10 +3,13 @@ package com.example.sabersenior
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 
 import com.example.sabersenior.JogoForca.JogoForca
 import android.widget.ImageView
+import android.widget.LinearLayout
+
 //import com.example.sabersenior.JogoVelha.JogoVelha
 
 
@@ -56,6 +59,27 @@ class TelaJogos : AppCompatActivity() {
 
         btnMemoria.setOnClickListener{
             val intent = Intent(this, JogoMemoria::class.java)
+            startActivity(intent)
+        }
+
+        val menu = findViewById<LinearLayout>(R.id.menu_horizontal)
+        val btnConfig = menu.findViewById<Button>(R.id.btnConfig)
+        val btnHome   = menu.findViewById<Button>(R.id.btnHome)
+        val btnPerfil = menu.findViewById<Button>(R.id.btnPerfil)
+
+
+        btnConfig.setOnClickListener{
+            val intent = Intent(this, Perfil::class.java)
+            startActivity(intent)
+        }
+
+        btnHome.setOnClickListener{
+            val intent = Intent(this, TelaJogos::class.java)
+            startActivity(intent)
+        }
+
+        btnPerfil.setOnClickListener{
+            val intent = Intent(this, Perfil::class.java)
             startActivity(intent)
         }
 

@@ -5,22 +5,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.LinearLayout
 
 class Menu : AppCompatActivity() {
-    lateinit var btnConfig: ImageButton
-    lateinit var btnHome: ImageButton
-    lateinit var btnPerfil: ImageButton
+    lateinit var btnConfig: Button
+    lateinit var btnHome: Button
+    lateinit var btnPerfil: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        btnConfig = findViewById(R.id.btnConfig)
-        btnHome = findViewById(R.id.btnHome)
-        btnPerfil = findViewById(R.id.btnPerfil)
+        btnConfig = findViewById<Button>(R.id.btnConfig)
+        btnHome   = findViewById<Button>(R.id.btnHome)
+        btnPerfil = findViewById<Button>(R.id.btnPerfil)
+
 
         btnConfig.setOnClickListener{
-            val intent = Intent(this, Config::class.java)
+            println("botao config click")
+            val intent = Intent(this, Perfil::class.java)
             startActivity(intent)
         }
 
