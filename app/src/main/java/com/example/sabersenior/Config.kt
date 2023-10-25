@@ -17,6 +17,7 @@ class Config : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(currentTheme)
         setContentView(R.layout.activity_config)
 
         // Alert Dialog Btn_SobreNos
@@ -24,16 +25,38 @@ class Config : AppCompatActivity() {
 
         btnSobreNos.setOnClickListener {
             val dialogBinding = layoutInflater.inflate(R.layout.custom_allert_sobre_nos, null)
+            val RadiusP = layoutInflater.inflate(R.layout.dialog_mudtema, null)
 
             val myDialog = Dialog(this)
             myDialog.setContentView(dialogBinding)
 
-            val SairSobre = dialogBinding.findViewById<Button>(R.id.dialog_Sair)
+            val radioGroup = RadiusP.findViewById<RadioGroup>(R.id.radioGroup)
+            val radioLight = RadiusP.findViewById<RadioButton>(R.id.radioLight)
+            val radioDark = RadiusP.findViewById<RadioButton>(R.id.radioDark)
 
-            SairSobre.setOnClickListener()
-            {
+            // Configure os RadioButtons para refletir o tema atual
+            if (currentTheme == R.style.AppTheme_LightTheme) {
+                radioLight.isChecked = true
+            } else {
+                radioDark.isChecked = true
+            }
+
+            radioGroup.setOnCheckedChangeListener { _, checkedId ->
+                when (checkedId) {
+                    R.id.radioLight -> {
+                        currentTheme = R.style.AppTheme_LightTheme
+                        setTheme(currentTheme)
+                        recreate() // Reinicie a atividade para aplicar o novo tema
+                    }
+                    R.id.radioDark -> {
+                        currentTheme = R.style.AppTheme_DarkTheme
+                        setTheme(currentTheme)
+                        recreate() // Reinicie a atividade para aplicar o novo tema
+                    }
+                }
                 myDialog.dismiss()
             }
+
             myDialog.setCancelable(true)
             myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             myDialog.show()
@@ -44,9 +67,8 @@ class Config : AppCompatActivity() {
         val btnHome   = menu.findViewById<Button>(R.id.btnHome)
         val btnPerfil = menu.findViewById<Button>(R.id.btnPerfil)
 
-
         btnConfig.setOnClickListener{
-            val intent = Intent(this, Perfil::class.java)
+            val intent = Intent(this, Config::class.java)
             startActivity(intent)
         }
 

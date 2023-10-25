@@ -1,33 +1,26 @@
 package com.example.sabersenior
 
+import com.example.sabersenior.model.CadastroUsuario
+import com.example.sabersenior.model.Usuario
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.DELETE
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.Header
-import retrofit2.http.Headers
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
+
 
 interface Service {
-    //CRUD
-
-    @GET("/api/usuario/get/")
+    @GET("/api/Cadastro/")
     fun getUsuario(): Call<List<Usuario>>
 
-
-    @GET("/api/usuario/getId/{id}")
+    @GET("/api/Cadastro/{id}")
     fun selecionarUsuario(): Call<List<Usuario>>
 
-    //authenticate
-    @FormUrlEncoded
-    @Headers("Content-Type: application/x-www-form-urlencoded")
-    @POST("/api/usuario/post")
-    fun incluirUsuario(nome: String,telefone: String, idFraseSecreta: String): Call<Usuario>
+    @Headers("Content-Type: application/json")
+    @POST("/api/Cadastro/")
+    fun incluirUsuario(@Body cadastroUsuario: CadastroUsuario): Call<Usuario>
 
-    @PUT("/api/usuario/put/{id}")
-    fun alterarUsuario(id:Int, usuario:Usuario): Call<List<Usuario>>
+    @Headers("Content-Type: application/json")
+    @PUT("/api/Cadastro/{id}")
+    fun alterarUsuario(id: Int, @Body cadastroUsuario: CadastroUsuario): Call<Usuario>
 
-    @DELETE("/api/usuario/delete/{id}")
-    fun excluirUsuario(id:Int, usuario:Usuario): Call<Usuario>
+    @DELETE("/api/Cadastro/{id}")
+    fun excluirUsuario(id: Int): Call<Usuario>
 }

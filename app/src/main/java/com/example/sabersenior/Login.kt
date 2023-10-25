@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
+import com.example.sabersenior.model.CadastroUsuario
+import com.example.sabersenior.model.Usuario
 import com.google.android.material.button.MaterialButton
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,17 +21,33 @@ class Login : AppCompatActivity() {
     fun login(){
         val retrofitClient = RetrofitConfig.getRetrofit()
         val service = retrofitClient.create(Service::class.java)
-        val callback = service.incluirUsuario(edtNome.text.toString(), edtTelefone.text.toString(), edtFraseSecreta.text.toString())
+
+        val cadastroUsuario = CadastroUsuario(edtNome.text.toString(), edtTelefone.text.toString(), edtFraseSecreta.text.toString())
+        val callback = service.incluirUsuario(cadastroUsuario)
+
+        val intent = Intent(this, TelaJogos::class.java)
 
         callback.enqueue(object : Callback<Usuario> {
-            override fun onResponse(call: Call<Usuario>?, response: Response<Usuario>?) {
-                Toast.makeText(baseContext, "Nome: ${response!!.body()?.nome}", Toast.LENGTH_LONG).show()
+            override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
+                println(response)
+                if (response.isSuccessful) {
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        val usuario = Usuario(responseBody.id, responseBody.idFraseSecreta, responseBody.nome, responseBody.telefone)
+                        intent.putExtra("idUsuario", usuario.id)
+                        intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+                        intent.putExtra("nomeUsuario", usuario.nome)
+                        intent.putExtra("telefoneUsuario", usuario.telefone)
+                        startActivity(intent)
+                    }
+                }
             }
 
-            override fun onFailure(call: Call<Usuario>?, t: Throwable?) {
+            override fun onFailure(call: Call<Usuario>, t: Throwable) {
+                Toast.makeText(baseContext, "Erro ao realizar login", Toast.LENGTH_LONG).show()
                 println("Erro ao realizar login")
+                println(t.toString())
             }
-
         })
     }
 
@@ -42,18 +60,8 @@ class Login : AppCompatActivity() {
         edtFraseSecreta = findViewById(R.id.edtFraseSecreta)
         btnLogin = findViewById(R.id.btnLogin)
 
-        btnLogin.setOnClickListener{login()}
-
-        /*
-        val idFraseSecreta = edtFraseSecreta.text.toString()
-        val nome = edtNome.text.toString()
-        val telefone = edtTelefone.text.toString()
-
-
-        var usuario = Usuario(15, idFraseSecreta, nome, telefone)
-        val intent = Intent(this, TelaJogos::class.java)
-        startActivity(intent)
-
-      */
+        btnLogin.setOnClickListener{
+            login()
+        }
     }
 }

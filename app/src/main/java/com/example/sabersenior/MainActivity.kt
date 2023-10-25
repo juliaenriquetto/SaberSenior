@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         imageView = findViewById(R.id.imageView)
         imageView.setOnClickListener{
-            val intent = Intent(this, Perfil::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
     }

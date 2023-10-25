@@ -1,4 +1,4 @@
-package com.example.sabersenior
+package com.example.sabersenior.model
 
 import com.google.gson.annotations.SerializedName
 

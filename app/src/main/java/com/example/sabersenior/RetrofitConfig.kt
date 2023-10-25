@@ -8,7 +8,7 @@ class RetrofitConfig {
     companion object{
         fun getRetrofit(): Retrofit{
             return Retrofit.Builder()
-                .baseUrl("https://CLAUDIO12:7225/api/Cadastro/") //http do servidor node
+                .baseUrl("http://10.0.2.2:5072/") //http do servidor dotnet
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }

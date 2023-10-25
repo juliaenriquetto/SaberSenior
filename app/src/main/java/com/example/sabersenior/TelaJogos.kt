@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.widget.AppCompatImageButton
 import android.widget.ImageButton
 
 import com.example.sabersenior.JogoForca.JogoForca
@@ -62,14 +63,18 @@ class TelaJogos : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btnJogoDaVelha.setImageResource(R.drawable.jododavelha)
+        btnPalavraCruzada.setImageResource(R.drawable.palavracruzada)
+        btnCacaPalavra.setImageResource(R.drawable.cacapalavra)
+        btnMemoria.setImageResource(R.drawable.jogomemoria)
+
         val menu = findViewById<LinearLayout>(R.id.menu_horizontal)
         val btnConfig = menu.findViewById<Button>(R.id.btnConfig)
         val btnHome   = menu.findViewById<Button>(R.id.btnHome)
         val btnPerfil = menu.findViewById<Button>(R.id.btnPerfil)
 
-
         btnConfig.setOnClickListener{
-            val intent = Intent(this, Perfil::class.java)
+            val intent = Intent(this, Config::class.java)
             startActivity(intent)
         }
 
@@ -82,10 +87,5 @@ class TelaJogos : AppCompatActivity() {
             val intent = Intent(this, Perfil::class.java)
             startActivity(intent)
         }
-
-        btnJogoDaVelha.setImageResource(R.drawable.jododavelha)
-        btnPalavraCruzada.setImageResource(R.drawable.palavracruzada)
-        btnCacaPalavra.setImageResource(R.drawable.cacapalavra)
-        btnMemoria.setImageResource(R.drawable.jogomemoria)
     }
 }
