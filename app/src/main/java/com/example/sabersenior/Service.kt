@@ -19,8 +19,8 @@ interface Service {
 
     @Headers("Content-Type: application/json")
     @PUT("/api/Cadastro/{id}")
-    fun alterarUsuario(id: Int, @Body cadastroUsuario: CadastroUsuario): Call<Usuario>
+    fun alterarUsuario(@Path("id") id: Int, @Body cadastroUsuario: CadastroUsuario): Call<Usuario>
 
     @DELETE("/api/Cadastro/{id}")
-    fun excluirUsuario(id: Int): Call<Usuario>
+    fun excluirUsuario(@Path("id") id: Int): Call<Usuario>
 }

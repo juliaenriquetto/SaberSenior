@@ -1,6 +1,5 @@
 package com.example.sabersenior
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         imageView = findViewById(R.id.imageView)
         imageView.setOnClickListener{
-            val intent = Intent(this, Login::class.java)
+            val intent = Intent(this, Cadastro::class.java)
             startActivity(intent)
         }
     }

@@ -12,13 +12,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Login : AppCompatActivity() {
+class Cadastro : AppCompatActivity() {
     lateinit var edtNome: EditText
     lateinit var edtTelefone: EditText
     lateinit var edtFraseSecreta: EditText
     lateinit var btnLogin: MaterialButton
 
-    fun login(){
+    fun cadastrar(){
         val retrofitClient = RetrofitConfig.getRetrofit()
         val service = retrofitClient.create(Service::class.java)
 
@@ -53,7 +53,7 @@ class Login : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_cadastro)
 
         edtNome = findViewById(R.id.edtNome)
         edtTelefone = findViewById(R.id.edtTelefone)
@@ -61,7 +61,7 @@ class Login : AppCompatActivity() {
         btnLogin = findViewById(R.id.btnLogin)
 
         btnLogin.setOnClickListener{
-            login()
+            cadastrar()
         }
     }
 }

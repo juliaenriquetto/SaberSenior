@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Cadastro">
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
             android:textSize="50dp"
             android:layout_marginTop="20dp"
             android:textColor="#FCFDFD"
-            android:text="Login"
+            android:text="Cadastro"
             android:fontFamily="@font/maven_pro_bold"
             android:layout_marginLeft="120dp"
 

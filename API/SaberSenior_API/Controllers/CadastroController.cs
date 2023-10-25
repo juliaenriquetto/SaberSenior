@@ -44,7 +44,6 @@ namespace SaberSenior_API.Controllers
         public async Task<ActionResult> post(CadastroSaberSenior model)
         {
             try{
-                Console.WriteLine(model.nome);
                 _context.CadastroSaberSenior.Add(model);
                 if(await _context.SaveChangesAsync() == 1)
                 {                        

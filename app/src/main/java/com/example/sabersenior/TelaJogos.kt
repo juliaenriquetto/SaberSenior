@@ -10,6 +10,7 @@ import android.widget.ImageButton
 import com.example.sabersenior.JogoForca.JogoForca
 import android.widget.ImageView
 import android.widget.LinearLayout
+import com.example.sabersenior.model.Usuario
 
 //import com.example.sabersenior.JogoVelha.JogoVelha
 
@@ -33,8 +34,23 @@ class TelaJogos : AppCompatActivity() {
         btnCacaPalavra = findViewById(R.id.btnCacaPalavra)
         btnMemoria = findViewById(R.id.btnMemoria)
 
+        val idUsuario = intent.getIntExtra("idUsuario", -1)
+        val nomeUsuario = intent.getStringExtra("nomeUsuario")
+        val telefoneUsuario = intent.getStringExtra("telefoneUsuario")
+        val idFraseSecretaUsuario = intent.getStringExtra("idFraseSecretaUsuario")
+        val usuario = Usuario(
+            idUsuario,
+            idFraseSecretaUsuario ?: "",
+            nomeUsuario ?: "",
+            telefoneUsuario ?: ""
+        )
+
         btnJogoDaForca.setOnClickListener{
             val intent = Intent(this, JogoForca::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
 
@@ -45,21 +61,37 @@ class TelaJogos : AppCompatActivity() {
 
         btnPalavraCruzada.setOnClickListener{
             val intent = Intent(this, JogoPalavraCruzada::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
 
         btnSudoku.setOnClickListener{
             val intent = Intent(this, JogoSudoku::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
 
         btnCacaPalavra.setOnClickListener{
             val intent = Intent(this, JogoCacaPalavra::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
 
         btnMemoria.setOnClickListener{
             val intent = Intent(this, JogoMemoria::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
 
@@ -70,21 +102,33 @@ class TelaJogos : AppCompatActivity() {
 
         val menu = findViewById<LinearLayout>(R.id.menu_horizontal)
         val btnConfig = menu.findViewById<Button>(R.id.btnConfig)
-        val btnHome   = menu.findViewById<Button>(R.id.btnHome)
+        val btnHome = menu.findViewById<Button>(R.id.btnHome)
         val btnPerfil = menu.findViewById<Button>(R.id.btnPerfil)
 
         btnConfig.setOnClickListener{
             val intent = Intent(this, Config::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
 
         btnHome.setOnClickListener{
             val intent = Intent(this, TelaJogos::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
 
         btnPerfil.setOnClickListener{
             val intent = Intent(this, Perfil::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
     }

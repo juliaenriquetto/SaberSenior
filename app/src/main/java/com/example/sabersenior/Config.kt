@@ -10,6 +10,8 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.TextView
+import com.example.sabersenior.model.Usuario
 
 class Config : AppCompatActivity() {
 
@@ -19,6 +21,20 @@ class Config : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(currentTheme)
         setContentView(R.layout.activity_config)
+
+        val idUsuario = intent.getIntExtra("idUsuario", -1)
+        val nomeUsuario = intent.getStringExtra("nomeUsuario")
+        val telefoneUsuario = intent.getStringExtra("telefoneUsuario")
+        val idFraseSecretaUsuario = intent.getStringExtra("idFraseSecretaUsuario")
+        val usuario = Usuario(
+            idUsuario,
+            idFraseSecretaUsuario ?: "",
+            nomeUsuario ?: "",
+            telefoneUsuario ?: ""
+        )
+
+        val txtNomeConfig = findViewById<TextView>(R.id.txtNomeConfig)
+        txtNomeConfig.text = usuario.nome
 
         // Alert Dialog Btn_SobreNos
         val btnSobreNos = findViewById<Button>(R.id.btnSobre)
@@ -69,16 +85,28 @@ class Config : AppCompatActivity() {
 
         btnConfig.setOnClickListener{
             val intent = Intent(this, Config::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
 
         btnHome.setOnClickListener{
             val intent = Intent(this, TelaJogos::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
 
         btnPerfil.setOnClickListener{
             val intent = Intent(this, Perfil::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
             startActivity(intent)
         }
     }
