@@ -4,12 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.widget.AppCompatImageButton
 import android.widget.ImageButton
 
 import com.example.sabersenior.JogoForca.JogoForca
-import android.widget.ImageView
 import android.widget.LinearLayout
+import com.example.sabersenior.JogoMemoria.JogoMemoria
 import com.example.sabersenior.model.Usuario
 
 //import com.example.sabersenior.JogoVelha.JogoVelha
