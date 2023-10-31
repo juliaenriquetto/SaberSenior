@@ -8,7 +8,6 @@ import android.widget.ImageButton
 
 import com.example.sabersenior.JogoForca.JogoForca
 import android.widget.LinearLayout
-import com.example.sabersenior.JogoMemoria.JogoMemoria
 import com.example.sabersenior.model.Usuario
 
 //import com.example.sabersenior.JogoVelha.JogoVelha
