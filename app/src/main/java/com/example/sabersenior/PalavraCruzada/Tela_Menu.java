@@ -1,5 +1,6 @@
 package com.example.sabersenior.PalavraCruzada;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -13,8 +14,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class Tela_Menu extends AppCompatActivity{
+import com.example.sabersenior.MainActivity;
+import com.example.sabersenior.R;
+
+public class Tela_Menu extends AppCompatActivity {
 
     TextView edtLogin;
     Button Level1, Level2 ,Level3, Level4, Level5, Level6;
@@ -23,23 +28,12 @@ public class Tela_Menu extends AppCompatActivity{
     private ListView lv;
     private Intent it;
 
-    private View Amarelo, Laranja;
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.optionmenu, menu);
-        return true;
-    }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela__menu);
-
-        MediaPlayer mediaPlayer = MediaPlayer.create(Tela_Menu.this, R.raw.music1);
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
+        setContentView(R.layout.activity_tela_palavra_cruzada__menu);
 
         edtLogin = findViewById(R.id.edtLogin);
         Level1 = findViewById(R.id.Level1);
@@ -65,8 +59,6 @@ public class Tela_Menu extends AppCompatActivity{
 
         it = new Intent(Tela_Menu.this, Tela_Jogo.class);
         it.putExtra("Login", Login);
-
-        SET_COLOR(Login);
 
         Level1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,47 +157,5 @@ public class Tela_Menu extends AppCompatActivity{
         });
 
 
-    }
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    private void SET_COLOR(String Login){
-
-        Laranja = new View(getApplicationContext());
-        Laranja.setBackgroundResource(R.color.Laranja);
-        Amarelo = new View(getApplicationContext());
-        Amarelo.setBackgroundResource(R.color.Amarelo);
-        int p;
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-        Intent it;
-        switch (id){
-            case R.id.itemExcluir:
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Tela_Menu.this);
-                alertDialogBuilder.setTitle("Tem certesa que quer excluir sua conta");
-                alertDialogBuilder
-                        .setMessage("Sua pontuação será perdida!")
-                        .setCancelable(false)
-                        .setNegativeButton("Voltar",new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                return;
-                            }
-                        });
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.show();
-                return true;
-
-
-            case R.id.itemSAIR:
-                it = new Intent( Tela_Menu.this, MainActivity.class);
-                startActivity(it);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 }

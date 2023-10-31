@@ -9,12 +9,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+
 import com.example.sabersenior.R;
 
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Activity_24 extends ActionBarActivity implements View.OnClickListener {
+public class Activity_24  {
     private int cartasViradas = 0; //VERIFICA QUANTAS CARTAS ESTÃO VIRADAS AO MESMO TEMPO
     private int pontos = 0;
 
@@ -62,46 +63,40 @@ public class Activity_24 extends ActionBarActivity implements View.OnClickListen
     private  ImageButton botoes[];
     private int imagens[];
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_24);
-
+    protected void onCreate() {
         inicializarComponents();
         inicializarArrays();
-        adicionarOuvintes();
         mostrarCartas();
-        //ANTES DE ESCONDER, É NECESSARIO DAR UMA PAUSA PARA O USUÁRIO "DECORAR" AS CARTAS :/
         esconderTodos();
 
     }
 
     public void inicializarComponents(){
-        btn0 =  (ImageButton) findViewById(R.id.btn0);
-        btn1 =  (ImageButton) findViewById(R.id.btn1);
-        btn2 =  (ImageButton) findViewById(R.id.btn2);
-        btn3 =  (ImageButton) findViewById(R.id.btn3);
-        btn4 =  (ImageButton) findViewById(R.id.btn4);
-        btn5 =  (ImageButton) findViewById(R.id.btn5);
-        btn6 =  (ImageButton) findViewById(R.id.btn6);
-        btn7 =  (ImageButton) findViewById(R.id.btn7);
-        btn8 =  (ImageButton) findViewById(R.id.btn8);
-        btn9 =  (ImageButton) findViewById(R.id.btn9);
-        btn10 = (ImageButton) findViewById(R.id.btn10);
-        btn11 = (ImageButton) findViewById(R.id.btn11);
-        btn12 = (ImageButton) findViewById(R.id.btn12);
-        btn13 = (ImageButton) findViewById(R.id.btn13);
-        btn14 = (ImageButton) findViewById(R.id.btn14);
-        btn15 = (ImageButton) findViewById(R.id.btn15);
-        btn16 = (ImageButton) findViewById(R.id.btn16);
-        btn17 = (ImageButton) findViewById(R.id.btn17);
-        btn18 = (ImageButton) findViewById(R.id.btn18);
-        btn19 = (ImageButton) findViewById(R.id.btn19);
-        btn20 = (ImageButton) findViewById(R.id.btn20);
-        btn21 = (ImageButton) findViewById(R.id.btn21);
-        btn22 = (ImageButton) findViewById(R.id.btn22);
-        btn23 = (ImageButton) findViewById(R.id.btn23);
-        txtPontos = (TextView) findViewById(R.id.txtPontos);
+        btn0 =  (ImageButton) btn0.findViewById(R.id.btn0);
+        btn1 =  (ImageButton) btn1.findViewById(R.id.btn1);
+        btn2 =  (ImageButton) btn2.findViewById(R.id.btn2);
+        btn3 =  (ImageButton) btn3.findViewById(R.id.btn3);
+        btn4 =  (ImageButton) btn4.findViewById(R.id.btn4);
+        btn5 =  (ImageButton) btn5.findViewById(R.id.btn5);
+        btn6 =  (ImageButton) btn6.findViewById(R.id.btn6);
+        btn7 =  (ImageButton) btn7.findViewById(R.id.btn7);
+        btn8 =  (ImageButton) btn8.findViewById(R.id.btn8);
+        btn9 =  (ImageButton) btn9.findViewById(R.id.btn9);
+        btn10 = (ImageButton) btn10.findViewById(R.id.btn10);
+        btn11 = (ImageButton) btn11.findViewById(R.id.btn11);
+        btn12 = (ImageButton) btn12.findViewById(R.id.btn12);
+        btn13 = (ImageButton) btn13.findViewById(R.id.btn13);
+        btn14 = (ImageButton) btn14.findViewById(R.id.btn14);
+        btn15 = (ImageButton) btn15.findViewById(R.id.btn15);
+        btn16 = (ImageButton) btn16.findViewById(R.id.btn16);
+        btn17 = (ImageButton) btn17.findViewById(R.id.btn17);
+        btn18 = (ImageButton) btn18.findViewById(R.id.btn18);
+        btn19 = (ImageButton) btn19.findViewById(R.id.btn19);
+        btn20 = (ImageButton) btn20.findViewById(R.id.btn20);
+        btn21 = (ImageButton) btn21.findViewById(R.id.btn21);
+        btn22 = (ImageButton) btn22.findViewById(R.id.btn22);
+        btn23 = (ImageButton) btn23.findViewById(R.id.btn23);
+        txtPontos = (TextView) txtPontos.findViewById(R.id.txtPontos);
     }
 
     public  void  inicializarArrays() {
@@ -116,13 +111,6 @@ public class Activity_24 extends ActionBarActivity implements View.OnClickListen
                 batman, huck, rangerAzul, goku, incrivel, sonic, mario, volverine,
                 mulhergata, aranha, freeza, luigi, mulhergata, aranha, freeza, luigi
         };
-    }
-
-
-    //FAZ COM QUE TODOS OS BUTTONS IMPLEMENTEM O ONCLICK NA MESMA CLASSE
-    public void adicionarOuvintes(){
-        for(int i = 0 ; i < botoes.length; i++)
-            botoes[i].setOnClickListener(this);
     }
 
 
@@ -142,9 +130,6 @@ public class Activity_24 extends ActionBarActivity implements View.OnClickListen
             botoes[i].setImageResource(R.drawable.esconde);
     }
 
-
-
-    @Override
     public void onClick( View v) {
         ImageButton cartaTocada = (ImageButton) v;
 
@@ -213,20 +198,5 @@ public class Activity_24 extends ActionBarActivity implements View.OnClickListen
     public void desvirarCartas(ImageButton carta1, ImageButton carta2) {
         carta1.setImageResource(R.drawable.esconde);
         carta2.setImageResource(R.drawable.esconde);
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

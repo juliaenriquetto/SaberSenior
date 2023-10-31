@@ -23,7 +23,7 @@ namespace SaberSenior_API.Controllers
         }
 
         [HttpGet("{CadastroId}")]
-         public ActionResult<CadastroSaberSenior> Get(int CadastroId)
+        public ActionResult<CadastroSaberSenior> Get(int CadastroId)
         {
             try
             {
