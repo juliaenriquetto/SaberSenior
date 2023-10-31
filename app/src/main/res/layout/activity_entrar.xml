@@ -25,18 +25,18 @@
         android:layout_height="641dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:background="@drawable/oval_background"
+        android:background="@drawable/oval_background_entrar"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:textColor="#FCFDFD"
-            android:text="CADASTRO"
+            android:text="ENTRAR"
             android:fontFamily="@font/maven_pro_bold"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="95dp"
 
             />
 
@@ -80,9 +80,8 @@
             android:hint="FRASE SECRETA"
             android:textSize="25dp" />
 
-
         <Button
-            android:id="@+id/btnCadastro"
+            android:id="@+id/btnEntrar"
             android:layout_width="205dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -90,25 +89,23 @@
             android:layout_marginBottom="0dp"
             android:backgroundTint="#2365A3"
             android:fontFamily="@font/inter_medium"
-            android:text="cadastre-se"
+            android:text="entrar"
             android:textColor="@color/white"
             android:textSize="20dp" />
 
         <Button
-            android:id="@+id/btnEntrarTela"
-            android:layout_width="164dp"
+            android:id="@+id/btnCadasTela"
+            android:layout_width="280dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:backgroundTint="#162850"
             android:fontFamily="@font/inter_medium"
-            android:text="entrar"
+            android:text="cadastrar-se"
             android:textColor="@color/white"
             android:textSize="20dp" />
 
 
-
     </LinearLayout>
-
 
 </LinearLayout>
