@@ -1,5 +1,6 @@
 package com.example.sabersenior
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,6 +18,7 @@ class Cadastro : AppCompatActivity() {
     lateinit var edtTelefone: EditText
     lateinit var edtFraseSecreta: EditText
     lateinit var btnLogin: MaterialButton
+    lateinit var btnE: MaterialButton
 
     fun cadastrar(){
         val retrofitClient = RetrofitConfig.getRetrofit()
@@ -51,6 +53,7 @@ class Cadastro : AppCompatActivity() {
         })
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
@@ -58,10 +61,18 @@ class Cadastro : AppCompatActivity() {
         edtNome = findViewById(R.id.edtNome)
         edtTelefone = findViewById(R.id.edtTelefone)
         edtFraseSecreta = findViewById(R.id.edtFraseSecreta)
-        btnLogin = findViewById(R.id.btnLogin)
+        btnLogin = findViewById(R.id.btnCadastro)
+        btnE = findViewById(R.id.btnCadasTela)
 
         btnLogin.setOnClickListener{
             cadastrar()
         }
+
+        btnE.setOnClickListener()
+        {
+            val intent = Intent(this, entrar::class.java)
+            startActivity(intent)
+        }
+
     }
 }
