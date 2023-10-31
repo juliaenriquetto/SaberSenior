@@ -20,6 +20,5 @@ class entrar : AppCompatActivity() {
             startActivity(intent)
         }
 
-
     }
 }

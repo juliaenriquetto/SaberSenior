@@ -36,7 +36,7 @@
                 android:layout_width="100dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/imagemteste" />
 
@@ -54,10 +54,10 @@
         </LinearLayout>
 
     <Button
+        android:layout_gravity="center"
         android:layout_width="380dp"
         android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:backgroundTint="#254586"
         android:text="TEMA"
         android:fontFamily="@font/livvic_medium"
@@ -67,8 +67,8 @@
     <Button
         android:id="@+id/btnSobre"
         android:layout_width="380dp"
+        android:layout_gravity="center"
         android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
         android:backgroundTint="#254586"
         android:text="SOBRE NÓS"
@@ -77,21 +77,29 @@
         android:textSize="30dp" />
 
     <Button
-
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="80dp"
         android:backgroundTint="#FFFFFF"
         android:text="SAIR DA CONTA"
+        android:layout_gravity="center"
         android:fontFamily="@font/maven_pro_bold"
         android:textColor="#021E81"
         android:textSize="30dp" />
 
-    <include
-        android:id="@+id/menu_horizontal"
-        layout="@layout/activity_menu"
-        android:layout_width="845dp"
-        android:layout_height="97dp"
-        android:layout_marginTop="-25dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/menu_horizontal"
+            layout="@layout/activity_menu"
+            android:layout_width="845dp"
+            android:layout_height="97dp"
+            android:layout_marginTop="-5dp" />
+
+    </LinearLayout>
 </LinearLayout>
+
+
