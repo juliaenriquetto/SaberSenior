@@ -11,7 +11,7 @@ interface Service {
     fun getUsuario(): Call<List<Usuario>>
 
     @GET("/api/Cadastro/{id}")
-    fun selecionarUsuario(): Call<List<Usuario>>
+    fun selecionarUsuario(@Body cadastroUsuario: CadastroUsuario): Call<Usuario>
 
     @Headers("Content-Type: application/json")
     @POST("/api/Cadastro/")

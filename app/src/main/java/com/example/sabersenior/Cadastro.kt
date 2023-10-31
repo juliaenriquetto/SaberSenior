@@ -46,8 +46,8 @@ class Cadastro : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Usuario>, t: Throwable) {
-                Toast.makeText(baseContext, "Erro ao realizar login", Toast.LENGTH_LONG).show()
-                println("Erro ao realizar login")
+                Toast.makeText(baseContext, "Erro ao realizar cadastro", Toast.LENGTH_LONG).show()
+                println("Erro ao realizar cadastro")
                 println(t.toString())
             }
         })
