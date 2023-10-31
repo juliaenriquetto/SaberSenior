@@ -1,5 +1,6 @@
 package com.example.sabersenior.JogoDaVelha;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,13 +14,17 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import com.example.sabersenior.R;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.zip.Inflater;
 
 public class JogoFragment extends Fragment {
-    private FragmentJogoBinding binding;
+    private Fragment binding;
     private Button[] botoes;
     private String[][] tabuleiro;
     private String simbJog1, simbJog2, simbolo, nameJog1, nameJog2;private Random random;private int numJogadas = 0, numVelhas = 0;
@@ -33,6 +38,7 @@ public class JogoFragment extends Fragment {
         setHasOptionsMenu(true);
 
         // instanciando o binding
+        Inflater FragmentJogoBinding;
         binding = FragmentJogoBinding.inflate(inflater, container, false);
 
         // instanciar o vetor
@@ -55,8 +61,6 @@ public class JogoFragment extends Fragment {
         nameJog1 = PrefNameUtil.getName1(getContext());
         nameJog2 = PrefNameUtil.getName2(getContext());
 
-        binding.text1.setText(getResources().getString(R.string.jogador_1, nameJog1, simbJog1));
-        binding.text2.setText(getResources().getString(R.string.jogador_2, nameJog2, simbJog2));
 
         // instanciar o random
         random = new Random();
@@ -64,11 +68,8 @@ public class JogoFragment extends Fragment {
         // sorteara quem começa o jogo
         sorteia();
 
-        // atualiza a vez
-        atualizaVez();
 
         // associar o vetor aos botões
-
         botoes[0] = binding.bt00;
         botoes[1] = binding.bt01;
         botoes[2] = binding.bt02;
@@ -88,11 +89,6 @@ public class JogoFragment extends Fragment {
         return binding.getRoot();
     }
 
-    private void atualizaPlacar() {
-        binding.placarUm.setText(placarJog1 + "");
-        binding.placarDois.setText(placarJog2 + "");
-    }
-
     private void sorteia() {
         // se gerar um valor verdadeiro jogador 1 começa
         // caso contrario jogador 2 começa
@@ -104,12 +100,6 @@ public class JogoFragment extends Fragment {
     }
 
     private void reseta() {
-        for (Button bt : botoes) {
-            bt.setClickable(true);
-            bt.setBackgroundColor(getResources().getColor(R.color.bluezao));
-            bt.setHintTextColor(getResources().getColor(R.color.bluezao));
-            bt.setText("");
-        }
 
         for (String[] vetor : tabuleiro) {
             Arrays.fill(vetor, "");
@@ -118,33 +108,8 @@ public class JogoFragment extends Fragment {
         numJogadas = 0;
 
         sorteia();
-        atualizaVez();
     }
 
-    private void atualizaVez() {
-
-        if (simbolo.equals(simbJog1)) {
-            // simbolo = simbJog2;
-
-            binding.linearLayout.setBackgroundColor(getResources().getColor(R.color.white));
-            binding.linearLayout2.setBackgroundColor(getResources().getColor(R.color.bluezao));
-
-            binding.text1.setTextColor(getResources().getColor(R.color.black));
-            binding.text2.setTextColor(getResources().getColor(R.color.white));
-            binding.placarUm.setTextColor(getResources().getColor(R.color.bluezao));
-            binding.placarDois.setTextColor(getResources().getColor(R.color.white));
-        } else {
-            // simbolo = simbJog1;
-
-            binding.text1.setTextColor(getResources().getColor(R.color.white));
-            binding.text2.setTextColor(getResources().getColor(R.color.black));
-            binding.placarUm.setTextColor(getResources().getColor(R.color.white));
-            binding.placarDois.setTextColor(getResources().getColor(R.color.black));
-
-            binding.linearLayout.setBackgroundColor(getResources().getColor(R.color.bluezao));
-            binding.linearLayout2.setBackgroundColor(getResources().getColor(R.color.white));
-        }
-    }
 
     private boolean venceu() {
         // verifica se venceu nas linhas
@@ -188,7 +153,6 @@ public class JogoFragment extends Fragment {
         // "seta" o simbolo do botao pressionado
         botao.setText(simbolo);
         // troca o background para branco
-        botao.setBackgroundColor(getResources().getColor(R.color.bluezao));
         // troca cor da letra para preto
         botao.setTextColor(Color.BLACK);
         // desabilita botao que foi jogado
@@ -197,103 +161,94 @@ public class JogoFragment extends Fragment {
         if (numJogadas >= 0 && venceu()) {
 
             // informa que houve um vencedor
-            Toast.makeText(getContext(), R.string.venceu, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "venceu", Toast.LENGTH_SHORT).show();
 
             if (simbolo.equals(simbJog1)) {
                 placarJog1++;
             } else {
                 placarJog2++;
             }
-            // atualiza placar
-            atualizaPlacar();
             // reseta
             reseta();
         } else if (numJogadas == 9) {
             numVelhas += 1;
-            String s = getContext().getString(R.string.deuvelha) + " " + numVelhas;
             // informa que deu velha
-            Toast.makeText(getContext(), s, Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "deu velha", Toast.LENGTH_LONG).show();
             // reseta
             reseta();
         } else {
             simbolo = simbolo.equals(simbJog1) ? simbJog2 : simbJog1;
-            atualizaVez();
         }
     };
 
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_main, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        // verificar qual opção foi selecionada
-        switch (item.getItemId()) {
-            // caso seja o opção de resetar
-            case R.id.menu_resetar:
-                placarJog2 = 0;
-                placarJog1 = 0;
-                atualizaPlacar();
-                reseta();
-                break;
-            // caso seja a opção de preferencias
-            case R.id.menu_pref:
-                NavHostFragment.findNavController(JogoFragment.this).navigate(R.id.action_jogoFragment_to_prefFragment);
-                break;
-            case R.id.menu_inicio:
-                NavHostFragment.findNavController(JogoFragment.this).navigate(R.id.action_jogoFragment_to_inicioFragment);
-                break;
-            case R.id.menu_resetar_tudo:
-
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this.getContext());
-                alertDialogBuilder.setTitle("ALERTA");
-                alertDialogBuilder.setMessage("Deseja resetar tudo ?");
-                alertDialogBuilder.setCancelable(false);
-
-                alertDialogBuilder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        nameJog1 = "Jogador 1";
-                        nameJog2 = "Jogador 2";
-                        simbJog1 = "X";
-                        simbJog2 = "O";
-                        placarJog2 = 0;
-                        placarJog1 = 0;
-                        atualizaPlacar();
-                        reseta();
-
-
-                        binding.text1.setText(getResources().getString(R.string.jogador_1, nameJog1, simbJog1));
-                        binding.text2.setText(getResources().getString(R.string.jogador_2, nameJog2, simbJog2));
-
-                        atualizaVez();
-                    }
-                });
-
-                alertDialogBuilder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // clicou não
-                    }
-                });
-                alertDialogBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // cancelou
-                    }
-                });
-
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.show();
-                break;
-            case R.id.menu_nomes:
-                NavHostFragment.findNavController(JogoFragment.this).navigate(R.id.action_jogoFragment_to_prefNameFragment);
-                break;
-        }
-        return true;
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        // verificar qual opção foi selecionada
+//        switch (item.getItemId()) {
+//            // caso seja o opção de resetar
+//            case R.id.menu_resetar:
+//                placarJog2 = 0;
+//                placarJog1 = 0;
+//                atualizaPlacar();
+//                reseta();
+//                break;
+//            // caso seja a opção de preferencias
+//            case R.id.menu_pref:
+//                NavHostFragment.findNavController(JogoFragment.this).navigate(R.id.action_jogoFragment_to_prefFragment);
+//                break;
+//            case R.id.menu_inicio:
+//                NavHostFragment.findNavController(JogoFragment.this).navigate(R.id.action_jogoFragment_to_inicioFragment);
+//                break;
+//            case R.id.menu_resetar_tudo:
+//
+//                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this.getContext());
+//                alertDialogBuilder.setTitle("ALERTA");
+//                alertDialogBuilder.setMessage("Deseja resetar tudo ?");
+//                alertDialogBuilder.setCancelable(false);
+//
+//                alertDialogBuilder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(DialogInterface arg0, int arg1) {
+//                        nameJog1 = "Jogador 1";
+//                        nameJog2 = "Jogador 2";
+//                        simbJog1 = "X";
+//                        simbJog2 = "O";
+//                        placarJog2 = 0;
+//                        placarJog1 = 0;
+//                        atualizaPlacar();
+//                        reseta();
+//
+//
+//                        binding.text1.setText(getResources().getString(R.string.jogador_1, nameJog1, simbJog1));
+//                        binding.text2.setText(getResources().getString(R.string.jogador_2, nameJog2, simbJog2));
+//
+//                        atualizaVez();
+//                    }
+//                });
+//
+//                alertDialogBuilder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // clicou não
+//                    }
+//                });
+//                alertDialogBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // cancelou
+//                    }
+//                });
+//
+//                AlertDialog alertDialog = alertDialogBuilder.create();
+//                alertDialog.show();
+//                break;
+//            case R.id.menu_nomes:
+//                NavHostFragment.findNavController(JogoFragment.this).navigate(R.id.action_jogoFragment_to_prefNameFragment);
+//                break;
+//        }
+//        return true;
+//    }
 
     @Override
     public void onStart() {

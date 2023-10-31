@@ -1,5 +1,6 @@
 package com.example.sabersenior.PalavraCruzada;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -12,8 +13,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class Tela_Jogo extends AppCompatActivity{
+import com.example.sabersenior.R;
+
+public class Tela_Jogo extends AppCompatActivity {
     private TextView edtTema;
     private TextView edtPalavra;
     private TextView edtDel;
@@ -44,13 +48,10 @@ public class Tela_Jogo extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela__jogo);
+        setContentView(R.layout.activity_tela_palavra_cruzada__jogo);
 
         INICIALIZA();
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(Tela_Jogo.this, R.raw.music1);
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
 
         Crono.start();
         Crono.setFormat("Tempo - %s");
@@ -61,7 +62,6 @@ public class Tela_Jogo extends AppCompatActivity{
         Login = bundle.getString("Login");
 
         view = new View(getApplicationContext());
-        view.setBackgroundResource(R.color.Preto);
 
         edtDel.setOnClickListener(new View.OnClickListener() {
             @Override

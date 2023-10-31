@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -16,7 +15,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 
-public class Activity_16 extends ActionBarActivity implements View.OnContextClickListener{
+public class Activity_16 {
     private int cartasViradas = 0; //VERIFICA QUANTAS CARTAS ESTÃO VIRADAS AO MESMO TEMPO
     private int pontos = 0;
 
@@ -53,35 +52,31 @@ public class Activity_16 extends ActionBarActivity implements View.OnContextClic
     private int imagens[];
 
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_16);
-
         inicializarComponents();
         inicializarArrays();
-        adicionarOuvintes();
         mostrarCartas();
         //ANTES DE ESCONDER, É NECESSARIO DAR UMA PAUSA PARA O USUÁRIO "DECORAR" AS CARTAS :/
         esconderTodos();
     }
 
     public void inicializarComponents() {
-        btn0 = (ImageButton) findViewById(R.id.btn0);
-        btn1 = (ImageButton) findViewById(R.id.btn1);
-        btn2 = (ImageButton) findViewById(R.id.btn2);
-        btn3 = (ImageButton) findViewById(R.id.btn3);
-        btn4 = (ImageButton) findViewById(R.id.btn4);
-        btn5 = (ImageButton) findViewById(R.id.btn5);
-        btn6 = (ImageButton) findViewById(R.id.btn6);
-        btn7 = (ImageButton) findViewById(R.id.btn7);
-        btn8 = (ImageButton) findViewById(R.id.btn8);
-        btn9 = (ImageButton) findViewById(R.id.btn9);
-        btn10 = (ImageButton) findViewById(R.id.btn10);
-        btn11 = (ImageButton) findViewById(R.id.btn11);
-        btn12 = (ImageButton) findViewById(R.id.btn12);
-        btn13 = (ImageButton) findViewById(R.id.btn13);
-        btn14 = (ImageButton) findViewById(R.id.btn14);
-        btn15 = (ImageButton) findViewById(R.id.btn15);
-        txtPontos = (TextView) findViewById(R.id.txtPontos);
+        btn0 =  (ImageButton) btn0.findViewById(R.id.btn0);
+        btn1 =  (ImageButton) btn1.findViewById(R.id.btn1);
+        btn2 =  (ImageButton) btn2.findViewById(R.id.btn2);
+        btn3 =  (ImageButton) btn3.findViewById(R.id.btn3);
+        btn4 =  (ImageButton) btn4.findViewById(R.id.btn4);
+        btn5 =  (ImageButton) btn5.findViewById(R.id.btn5);
+        btn6 =  (ImageButton) btn6.findViewById(R.id.btn6);
+        btn7 =  (ImageButton) btn7.findViewById(R.id.btn7);
+        btn8 =  (ImageButton) btn8.findViewById(R.id.btn8);
+        btn9 =  (ImageButton) btn9.findViewById(R.id.btn9);
+        btn10 = (ImageButton) btn10.findViewById(R.id.btn10);
+        btn11 = (ImageButton) btn11.findViewById(R.id.btn11);
+        btn12 = (ImageButton) btn12.findViewById(R.id.btn12);
+        btn13 = (ImageButton) btn13.findViewById(R.id.btn13);
+        btn14 = (ImageButton) btn14.findViewById(R.id.btn14);
+        btn15 = (ImageButton) btn15.findViewById(R.id.btn15);
+        txtPontos = (TextView) txtPontos.findViewById(R.id.txtPontos);
     }
 
     public void inicializarArrays() {
@@ -94,12 +89,6 @@ public class Activity_16 extends ActionBarActivity implements View.OnContextClic
                 batman, huck, rangerAzul, goku, incrivel, sonic, mario, volverine,
                 batman, huck, rangerAzul, goku, incrivel, sonic, mario, volverine
         };
-    }
-
-    //FAZ COM QUE TODOS OS BUTTONS IMPLEMENTEM O ONCLICK NA MESMA CLASSE
-    public void adicionarOuvintes() {
-        for (int i = 0; i < botoes.length; i++)
-            botoes[i].setOnClickListener(this);
     }
 
 
@@ -185,20 +174,4 @@ public class Activity_16 extends ActionBarActivity implements View.OnContextClic
         carta1.setImageResource(R.drawable.esconde);
         carta2.setImageResource(R.drawable.esconde);
     }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
 }

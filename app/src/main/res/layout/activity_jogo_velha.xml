@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/frameLayout"
     android:backgroundTint="@color/black"
-    tools:context=".JogoVelha.JogoVelha">
+    tools:context=".JogoDaVelha.JogoDaVelha">
 
     <TextView
         android:layout_width="wrap_content"

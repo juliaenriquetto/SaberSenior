@@ -1,37 +1,29 @@
 package com.example.sabersenior.JogoMemoria;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
-public class JogoMemoria extends ActionBarActivy implements View.OnClickListener {
+import com.example.sabersenior.R;
+
+public abstract class JogoMemoria extends Context {
     private Button btn16;
     private Button btn20;
     private Button btn24;
 
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-
         inicializarComponents();
-        adicionarOuvintes();
-
     }
 
     public void inicializarComponents() {
-        btn16 = (Button) findViewById(R.id.btn16);
-        btn20 = (Button) findViewById(R.id.btn20);
-        btn24 = (Button) findViewById(R.id.btn24);
-    }
-
-    public void adicionarOuvintes() {
-        btn16.setOnClickListener(this);
-        btn20.setOnClickListener(this);
-        btn24.setOnClickListener(this);
+        btn16 = (Button) btn16.findViewById(R.id.btn16);
+        btn20 = (Button) btn20.findViewById(R.id.btn20);
+        btn24 = (Button) btn24.findViewById(R.id.btn24);
     }
 
     public void onClick(View v) {

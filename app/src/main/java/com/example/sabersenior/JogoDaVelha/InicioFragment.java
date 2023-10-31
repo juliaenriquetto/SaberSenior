@@ -1,12 +1,16 @@
 package com.example.sabersenior.JogoDaVelha;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import com.example.sabersenior.R;
 
 public class InicioFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
@@ -54,7 +58,7 @@ public class InicioFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentInicioBinding.inflate(inflater, container, false);
 
-        binding.btJogar.setOnClickListener(v -> {
+        binding.btnJogar.setOnClickListener(v -> {
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this.getContext());
             alertDialogBuilder.setTitle("ALERTA");
