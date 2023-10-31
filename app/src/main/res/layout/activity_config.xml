@@ -54,15 +54,16 @@
         </LinearLayout>
 
     <Button
+        android:id="@+id/btnParaQuem"
         android:layout_gravity="center"
         android:layout_width="380dp"
         android:layout_height="70dp"
         android:layout_marginTop="90dp"
         android:backgroundTint="#254586"
-        android:text="TEMA"
+        android:text="PARA QUEM FIZEMOS"
         android:fontFamily="@font/livvic_medium"
         android:textColor="@color/white"
-        android:textSize="30dp" />
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/btnSobre"
@@ -74,7 +75,7 @@
         android:text="SOBRE NÓS"
         android:fontFamily="@font/livvic_medium"
         android:textColor="@color/white"
-        android:textSize="30dp" />
+        android:textSize="25dp" />
 
     <Button
         android:layout_width="380dp"

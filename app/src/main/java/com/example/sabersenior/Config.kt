@@ -37,47 +37,36 @@ class Config : AppCompatActivity() {
         txtNomeConfig.text = usuario.nome
 
         // Alert Dialog Btn_SobreNos
-        val btnSobreNos = findViewById<Button>(R.id.btnSobre)
+        val Sobre = findViewById<Button>(R.id.btnSobre)
 
-        btnSobreNos.setOnClickListener {
-            val dialogBinding = layoutInflater.inflate(R.layout.custom_allert_sobre_nos, null)
-            val RadiusP = layoutInflater.inflate(R.layout.dialog_mudtema, null)
+        Sobre.setOnClickListener(){
+            val dialaogBing = layoutInflater.inflate(R.layout.custom_allert_sobre_nos, null)
 
-            val myDialog = Dialog(this)
-            myDialog.setContentView(dialogBinding)
+            val dialogSobre = Dialog(this)
+            dialogSobre.setContentView(dialaogBing)
 
-            val radioGroup = RadiusP.findViewById<RadioGroup>(R.id.radioGroup)
-            val radioLight = RadiusP.findViewById<RadioButton>(R.id.radioLight)
-            val radioDark = RadiusP.findViewById<RadioButton>(R.id.radioDark)
-
-            // Configure os RadioButtons para refletir o tema atual
-            if (currentTheme == R.style.AppTheme_LightTheme) {
-                radioLight.isChecked = true
-            } else {
-                radioDark.isChecked = true
-            }
-
-            radioGroup.setOnCheckedChangeListener { _, checkedId ->
-                when (checkedId) {
-                    R.id.radioLight -> {
-                        currentTheme = R.style.AppTheme_LightTheme
-                        setTheme(currentTheme)
-                        recreate() // Reinicie a atividade para aplicar o novo tema
-                    }
-                    R.id.radioDark -> {
-                        currentTheme = R.style.AppTheme_DarkTheme
-                        setTheme(currentTheme)
-                        recreate() // Reinicie a atividade para aplicar o novo tema
-                    }
-                }
-                myDialog.dismiss()
-            }
-
-            myDialog.setCancelable(true)
-            myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            myDialog.show()
+            dialogSobre.setCancelable(true)
+            dialogSobre.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+             dialogSobre.show()
         }
 
+
+        val ParaQuem = findViewById<Button>(R.id.btnParaQuem)
+
+        ParaQuem.setOnClickListener(){
+            val dialaogBing2 = layoutInflater.inflate(R.layout.custtom_allert_para_quem, null)
+
+            val dialogSobre = Dialog(this)
+            dialogSobre.setContentView(dialaogBing2)
+
+            dialogSobre.setCancelable(true)
+            dialogSobre.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialogSobre.show()
+        }
+
+
+
+        // MENU
         val menu = findViewById<LinearLayout>(R.id.menu_horizontal)
         val btnConfig = menu.findViewById<Button>(R.id.btnConfig)
         val btnHome   = menu.findViewById<Button>(R.id.btnHome)
