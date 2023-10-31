@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.LinearLayout
 
 import com.example.sabersenior.JogoForca.JogoForca
-import android.widget.LinearLayout
+import com.example.sabersenior.PalavraCruzada.PalavraCruzada
+import com.example.sabersenior.JogoDaVelha.JogoDaVelha
+import com.example.sabersenior.JogoMemoria.JogoMemoria
+import com.example.sabersenior.CacaPalavra.CacaPalavra
+import com.example.sabersenior.Sudoku.JogoSudoku
+
 import com.example.sabersenior.model.Usuario
-
-//import com.example.sabersenior.JogoVelha.JogoVelha
-
 
 class TelaJogos : AppCompatActivity() {
     lateinit var btnJogoDaForca: ImageButton
@@ -53,12 +56,12 @@ class TelaJogos : AppCompatActivity() {
         }
 
         btnJogoDaVelha.setOnClickListener{
-//            val intent = Intent(this, JogoVelha::class.java)
+            val intent = Intent(this, JogoDaVelha::class.java)
             startActivity(intent)
         }
 
         btnPalavraCruzada.setOnClickListener{
-            val intent = Intent(this, JogoPalavraCruzada::class.java)
+            val intent = Intent(this, PalavraCruzada::class.java)
             intent.putExtra("idUsuario", usuario.id)
             intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
             intent.putExtra("nomeUsuario", usuario.nome)
@@ -76,7 +79,7 @@ class TelaJogos : AppCompatActivity() {
         }
 
         btnCacaPalavra.setOnClickListener{
-            val intent = Intent(this, JogoCacaPalavra::class.java)
+            val intent = Intent(this, CacaPalavra::class.java)
             intent.putExtra("idUsuario", usuario.id)
             intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
             intent.putExtra("nomeUsuario", usuario.nome)
