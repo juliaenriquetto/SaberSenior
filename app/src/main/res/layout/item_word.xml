@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-    <data>
-        <variable
-            name="ItemWordModel"
-            type="com.example.sabersenior.CacaPalavra.WordModel" />
-    </data>
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="ItemWordModel"-->
+<!--            type="com.example.sabersenior.CacaPalavra.WordModel" />-->
+<!--    </data>-->
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <FrameLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="wrap_content"

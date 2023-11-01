@@ -7,6 +7,10 @@ android {
     namespace 'com.example.sabersenior'
     compileSdk 34
 
+    dataBinding {
+        enabled = true
+    }
+    
     defaultConfig {
         applicationId "com.example.sabersenior"
         minSdk 26

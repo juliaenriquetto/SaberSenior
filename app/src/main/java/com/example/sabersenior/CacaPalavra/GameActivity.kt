@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.flexbox.FlexboxItemDecoration
 import com.example.sabersenior.CacaPalavra.OnSelectListener
-import com.example.sabersenior.CacaPalavra.ActivityGameBinding
 import com.example.sabersenior.CacaPalavra.Game
 import com.example.sabersenior.CacaPalavra.WordModel
 
