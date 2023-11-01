@@ -11,7 +11,6 @@ import com.example.sabersenior.JogoForca.JogoForca
 import com.example.sabersenior.PalavraCruzada.PalavraCruzada
 import com.example.sabersenior.JogoDaVelha.JogoDaVelha
 import com.example.sabersenior.JogoMemoria.JogoMemoria
-import com.example.sabersenior.CacaPalavra.CacaPalavra
 import com.example.sabersenior.Sudoku.JogoSudoku
 
 import com.example.sabersenior.model.Usuario
