@@ -3067,23 +3067,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\u22139\\.nuget\\packages\\": {},
+    "C:\\Users\\u22140\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\u22139\\Pictures\\SaberSenior\\API\\SaberSenior_API\\SaberSenior_API.csproj",
+      "projectUniqueName": "C:\\Users\\u22140\\Documents\\GitHub\\SaberSenior\\API\\SaberSenior_API\\SaberSenior_API.csproj",
       "projectName": "SaberSenior_API",
-      "projectPath": "C:\\Users\\u22139\\Pictures\\SaberSenior\\API\\SaberSenior_API\\SaberSenior_API.csproj",
-      "packagesPath": "C:\\Users\\u22139\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\u22139\\Pictures\\SaberSenior\\API\\SaberSenior_API\\obj\\",
+      "projectPath": "C:\\Users\\u22140\\Documents\\GitHub\\SaberSenior\\API\\SaberSenior_API\\SaberSenior_API.csproj",
+      "packagesPath": "C:\\Users\\u22140\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\u22140\\Documents\\GitHub\\SaberSenior\\API\\SaberSenior_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\u22139\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\u22140\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3140,19 +3140,19 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.23, 6.0.23]"
+            "version": "[6.0.24, 6.0.24]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.23, 6.0.23]"
+            "version": "[6.0.24, 6.0.24]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.23, 6.0.23]"
+            "version": "[6.0.24, 6.0.24]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.23, 6.0.23]"
+            "version": "[6.0.24, 6.0.24]"
           }
         ],
         "frameworkReferences": {
@@ -3163,7 +3163,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.112\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.113\\RuntimeIdentifierGraph.json"
       }
     }
   }

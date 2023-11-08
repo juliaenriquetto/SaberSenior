@@ -19,6 +19,7 @@ namespace SaberSenior_API.Controllers
         [HttpGet]
         public ActionResult<List<CadastroSaberSenior>> GetAll()
         {
+            Console.WriteLine("PASSOU AQUI DE VDD");
             return _context.CadastroSaberSenior.ToList();
         }
 
@@ -43,11 +44,14 @@ namespace SaberSenior_API.Controllers
         [HttpPost]
         public async Task<ActionResult> post(CadastroSaberSenior model)
         {
+            Console.WriteLine("Veio pra cá");
+
             try{
                 _context.CadastroSaberSenior.Add(model);
                 if(await _context.SaveChangesAsync() == 1)
                 {                        
                     //return Ok()
+                    Console.WriteLine(model.id);
                     return Created($"/api/cadastro/{model.idFraseSecreta}", model); 
                 }
             }
@@ -96,6 +100,30 @@ namespace SaberSenior_API.Controllers
                 return Created($"/api/cadastro/{dadosCadastroAlt.idFraseSecreta}", dadosCadastroAlt);
             }
             catch{
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
+            }
+        }
+
+         [HttpPost("login")]
+        public ActionResult Login([FromForm] string telefone, [FromForm] string idFraseSecreta)
+        {
+            try
+            {
+                var usuario = _context.CadastroSaberSenior.SingleOrDefault(usuarioDoBanco =>
+                    usuarioDoBanco.telefone == telefone && usuarioDoBanco.idFraseSecreta == idFraseSecreta);
+
+                if (usuario == null)
+                {
+                    return Unauthorized("Crendeciais inválidas!");
+                }
+
+                // no futuro, trocar por um token de autenticação JWT.
+                // por hora e por simplicidade, retornamos que o login foi sucecido
+                // sem maiores complicações.
+                return Ok(usuario);
+            }
+            catch
+            {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
             }
         }

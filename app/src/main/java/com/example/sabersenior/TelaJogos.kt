@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import com.example.sabersenior.CacaPalavra.CacaPalavra
 
 import com.example.sabersenior.JogoForca.JogoForca
 import com.example.sabersenior.PalavraCruzada.PalavraCruzada

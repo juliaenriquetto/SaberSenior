@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.sabersenior.model.CadastroUsuario
@@ -62,17 +64,16 @@ class Cadastro : AppCompatActivity() {
         edtTelefone = findViewById(R.id.edtTelefone)
         edtFraseSecreta = findViewById(R.id.edtFraseSecreta)
         btnLogin = findViewById(R.id.btnCadastro)
-        btnE = findViewById(R.id.btnCadasTela)
+        btnE = findViewById(R.id.btnCadastro)
 
         btnLogin.setOnClickListener{
             cadastrar()
         }
 
-        btnE.setOnClickListener()
-        {
+        btnE.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, entrar::class.java)
             startActivity(intent)
-        }
+        })
 
     }
 }

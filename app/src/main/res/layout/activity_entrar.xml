@@ -101,7 +101,7 @@
             android:layout_marginBottom="20dp"
             android:backgroundTint="#162850"
             android:fontFamily="@font/inter_medium"
-            android:text="cadastrar-se"
+            android:text="cadastro"
             android:textColor="@color/white"
             android:textSize="20dp" />
 

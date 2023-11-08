@@ -16,7 +16,6 @@ import retrofit2.Response
 class entrar : AppCompatActivity() {
 
     lateinit var btnC: MaterialButton
-    lateinit var edtNome: EditText
     lateinit var edtTelefone: EditText
     lateinit var edtFraseSecreta: EditText
     lateinit var btnEntrar: MaterialButton
@@ -25,8 +24,7 @@ class entrar : AppCompatActivity() {
         val retrofitClient = RetrofitConfig.getRetrofit()
         val service = retrofitClient.create(Service::class.java)
 
-        val logar = CadastroUsuario(edtNome.text.toString(), edtTelefone.text.toString(), edtFraseSecreta.text.toString())
-        val callback = service.selecionarUsuario(logar)
+        val callback = service.logarUsuario(edtTelefone.text.toString(), edtFraseSecreta.text.toString())
 
         val intent = Intent(this, TelaJogos::class.java)
 
@@ -42,6 +40,9 @@ class entrar : AppCompatActivity() {
                         intent.putExtra("nomeUsuario", usuario.nome)
                         intent.putExtra("telefoneUsuario", usuario.telefone)
                         startActivity(intent)
+                    }
+                    else {
+                        Toast.makeText(baseContext, "Credenciais inválidas!", Toast.LENGTH_LONG).show()
                     }
                 }
             }
@@ -59,8 +60,12 @@ class entrar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entrar)
 
+        val retrofitClient = RetrofitConfig.getRetrofit()
+        val service = retrofitClient.create(Service::class.java)
+
+        service.getUsuario();
+
         btnC = findViewById(R.id.btnCadasTela)
-        edtNome = findViewById(R.id.edtNome)
         edtTelefone = findViewById(R.id.edtTelefone)
         edtFraseSecreta = findViewById(R.id.edtFraseSecreta)
         btnEntrar = findViewById(R.id.btnEntrar)

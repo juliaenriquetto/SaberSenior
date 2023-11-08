@@ -23,4 +23,8 @@ interface Service {
 
     @DELETE("/api/Cadastro/{id}")
     fun excluirUsuario(@Path("id") id: Int): Call<Usuario>
+
+    @FormUrlEncoded
+    @POST("/api/Cadastro/login")
+    fun logarUsuario(@Field("telefone") telefone: String, @Field("idFraseSecreta") idFraseSecreta: String): Call<Usuario>
 }
