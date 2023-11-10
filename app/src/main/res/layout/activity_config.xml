@@ -78,6 +78,7 @@
         android:textSize="25dp" />
 
     <Button
+        android:id="@+id/btnSairConfig"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -98,7 +99,7 @@
             layout="@layout/activity_menu"
             android:layout_width="845dp"
             android:layout_height="97dp"
-            android:layout_marginTop="-5dp" />
+            android:layout_marginTop="60dp" />
 
     </LinearLayout>
 </LinearLayout>

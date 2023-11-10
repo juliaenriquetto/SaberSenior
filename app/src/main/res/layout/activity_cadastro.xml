@@ -82,27 +82,27 @@
 
 
         <Button
-            android:id="@+id/btnCadastro"
+            android:id="@+id/btnEntrarTela"
             android:layout_width="205dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="0dp"
-            android:backgroundTint="#2365A3"
+            android:backgroundTint="#162850"
             android:fontFamily="@font/inter_medium"
-            android:text="cadastre-se"
+            android:text="ENTRAR"
             android:textColor="@color/white"
             android:textSize="20dp" />
 
         <Button
-            android:id="@+id/btnEntrarTela"
-            android:layout_width="164dp"
+            android:id="@+id/btnCadastro"
+            android:layout_width="190dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="#162850"
+            android:backgroundTint="#2365A3"
             android:fontFamily="@font/inter_medium"
-            android:text="entrar"
+            android:text="CADASTRE-SE"
             android:textColor="@color/white"
             android:textSize="20dp" />
 

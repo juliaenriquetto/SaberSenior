@@ -26,4 +26,5 @@ class MainActivity : AppCompatActivity() {
     val service = retrofitClient.create(Service::class.java)
     val callback = service.getUsuario()
 
+
 }

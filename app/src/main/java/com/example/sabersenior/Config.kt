@@ -64,6 +64,17 @@ class Config : AppCompatActivity() {
             dialogSobre.show()
         }
 
+        //botão sair da conta
+        val btnSair = findViewById<Button>(R.id.btnSairConfig)
+        btnSair.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("idUsuario", usuario.id)
+            intent.putExtra("idFraseSecretaUsuario", usuario.idFraseSecreta)
+            intent.putExtra("nomeUsuario", usuario.nome)
+            intent.putExtra("telefoneUsuario", usuario.telefone)
+            startActivity(intent)
+        }
+
 
 
         // MENU

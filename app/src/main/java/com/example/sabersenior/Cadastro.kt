@@ -5,7 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.sabersenior.model.CadastroUsuario
@@ -19,8 +18,8 @@ class Cadastro : AppCompatActivity() {
     lateinit var edtNome: EditText
     lateinit var edtTelefone: EditText
     lateinit var edtFraseSecreta: EditText
-    lateinit var btnLogin: MaterialButton
-    lateinit var btnE: MaterialButton
+    lateinit var btnCadastro: MaterialButton
+    lateinit var btnEntrar: MaterialButton
 
     fun cadastrar(){
         val retrofitClient = RetrofitConfig.getRetrofit()
@@ -63,14 +62,14 @@ class Cadastro : AppCompatActivity() {
         edtNome = findViewById(R.id.edtNome)
         edtTelefone = findViewById(R.id.edtTelefone)
         edtFraseSecreta = findViewById(R.id.edtFraseSecreta)
-        btnLogin = findViewById(R.id.btnCadastro)
-        btnE = findViewById(R.id.btnCadastro)
+        btnCadastro = findViewById(R.id.btnCadastro)
+        btnEntrar = findViewById(R.id.btnEntrarTela)
 
-        btnLogin.setOnClickListener{
+        btnCadastro.setOnClickListener{
             cadastrar()
         }
 
-        btnE.setOnClickListener(View.OnClickListener {
+        btnEntrar.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, entrar::class.java)
             startActivity(intent)
         })

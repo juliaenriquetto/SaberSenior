@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
-import com.example.sabersenior.model.CadastroUsuario
 import com.example.sabersenior.model.Usuario
 import com.google.android.material.button.MaterialButton
 import retrofit2.Call
@@ -15,7 +14,7 @@ import retrofit2.Response
 
 class entrar : AppCompatActivity() {
 
-    lateinit var btnC: MaterialButton
+    lateinit var btnCadastro: MaterialButton
     lateinit var edtTelefone: EditText
     lateinit var edtFraseSecreta: EditText
     lateinit var btnEntrar: MaterialButton
@@ -44,6 +43,8 @@ class entrar : AppCompatActivity() {
                     else {
                         Toast.makeText(baseContext, "Credenciais inválidas!", Toast.LENGTH_LONG).show()
                     }
+                } else {
+                    Toast.makeText(baseContext, "Credenciais inválidas!", Toast.LENGTH_LONG).show()
                 }
             }
 
@@ -65,7 +66,7 @@ class entrar : AppCompatActivity() {
 
         service.getUsuario();
 
-        btnC = findViewById(R.id.btnCadasTela)
+        btnCadastro = findViewById(R.id.btnCadasTela)
         edtTelefone = findViewById(R.id.edtTelefone)
         edtFraseSecreta = findViewById(R.id.edtFraseSecreta)
         btnEntrar = findViewById(R.id.btnEntrar)
@@ -74,7 +75,7 @@ class entrar : AppCompatActivity() {
             entrar()
         }
 
-        btnC.setOnClickListener()
+        btnCadastro.setOnClickListener()
         {
             val intent = Intent(this, Cadastro::class.java)
             startActivity(intent)
