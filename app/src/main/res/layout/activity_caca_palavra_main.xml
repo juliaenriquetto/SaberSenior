@@ -8,7 +8,6 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragments"
         tools:layout="@layout/fragment_play"
-        android:name="com.neo.wordsearch.ui.fragment.PlayFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

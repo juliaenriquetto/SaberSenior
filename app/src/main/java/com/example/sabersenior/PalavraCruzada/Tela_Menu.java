@@ -36,7 +36,6 @@ public class Tela_Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_palavra_cruzada__menu);
 
-        //edtLogin = findViewById(R.id.edtLogin);
         Level1 = findViewById(R.id.Level1);
         Level2 = findViewById(R.id.Level2);
         Level3 = findViewById(R.id.Level3);
@@ -50,7 +49,6 @@ public class Tela_Menu extends AppCompatActivity {
         Level11 = findViewById(R.id.Level11);
         Level12 = findViewById(R.id.Level12);
 
-        //lv = findViewById(R.id.LIST);
 
         Intent itRecebedora = getIntent();
         Bundle bundle = itRecebedora.getExtras();

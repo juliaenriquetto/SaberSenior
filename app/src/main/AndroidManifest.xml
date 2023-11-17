@@ -24,13 +24,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".menu_extra"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".JogoMemoria.JogoMemoria"
             android:exported="false">
             <meta-data
@@ -38,28 +31,28 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".JogoCacaPalavra"
+            android:name=".CacaPalavra.CacaPalavra"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".JogoSudoku"
+            android:name=".Sudoku.JogoSudoku"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".JogoPalavraCruzada"
+            android:name=".PalavraCruzada.PalavraCruzada"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".JogoVelha.JogoVelha"
+            android:name=".JogoDaVelha.JogoVelha"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
